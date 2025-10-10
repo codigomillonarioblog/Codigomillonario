@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“De la Rutina a la Riqueza: El Camino Alternativo hacia tu Independencia”</title>
+<!-- Favicon -->
+<link rel="icon" type="images/png" href="images/joe.png">
+<link rel="shortcut icon" href="images/joe.png" type="images/png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="css/pogo-slider.min.css">
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    /* ======== ESTILO GLOBAL ======== */
+    body {
+      background-color: #000;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, div, strong {
+      color: #ffffff !important;
+    }
+
+    /* ======== NAVBAR MODERNO ======== */
+    .navbar {
+      background: #000;
+      border-bottom: 2px solid #ff9800;
+      padding: 0.8rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      max-width: 110px;
+      height: auto;
+      transition: 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      opacity: 0.9;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #ff9800;
+      transition: 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff9800 !important;
+    }
+
+    /* ======== BOTÓN HAMBURGUESA ======== */
+    .navbar-toggler {
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -7px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 7px;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon {
+      background: transparent;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    /* ======== MENU RESPONSIVO ======== */
+    @media (max-width: 992px) {
+      .navbar-brand img {
+        max-width: 85px;
+      }
+
+      .navbar-collapse {
+        background: #000;
+        border-top: 1px solid #222;
+        transition: max-height 0.4s ease;
+        overflow: hidden;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      /* 🔸 Corregir el ancho de todo el contenido */
+      body, .container, .pogoSlider, .slide_text, .pogoSlider-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .slide_text {
+        padding: 0 15px;
+      }
+
+      p, h3, h1, h2 {
+        text-align: center;
+        width: 100% !important;
+      }
+    }
+
+    /* ======== BANNER ======== */
+    .ulockd-home-slider {
+      position: relative;
+      margin-top: 90px;
+    }
+
+    .pogoSlider-slide {
+      height: 420px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slide_text h3 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 600;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .slide_text h3 {
+        font-size: 26px;
+      }
+    }
+
+
+
+
+
+    
+
+body {
+  padding-top: 90px; /* Ajusta según la altura de tu navbar */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Un poco menos en pantallas pequeñas */
+  }
+}
+
+
+
+
+.section p {
+  text-align: justify;
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Código Millonario">
+      </a>
+
+      <button class="navbar-toggler" type="button" id="menu-toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+<li class="nav-item"><a class="nav-link" href="inversion.html">Inversión</a></li>
+<li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+<li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+<li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.pogo-slider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Inicializar slider
+      $('#js-main-slider').pogoSlider({
+        autoplay: true,
+        generateNav: false,
+        displayProgess: true,
+        preserveTargetSize: true,
+        targetWidth: 1000,
+        targetHeight: 300,
+      }).data('plugin_pogoSlider');
+
+      // ✅ Menú hamburguesa: abrir/cerrar correctamente
+      $('#menu-toggle').on('click', function () {
+        $(this).toggleClass('active');
+        $('#navbarNav').slideToggle(300);
+      });
+
+      // ✅ Cerrar menú al hacer clic en un enlace
+      $('.navbar-nav .nav-link').on('click', function () {
+        if ($(window).width() < 992) {
+          $('#menu-toggle').removeClass('active');
+          $('#navbarNav').slideUp(300);
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+<!-- ======== BOTONES FLOTANTES DE REDES REDONDOS ======== -->
+<style>
+  .social-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+  }
+
+  .social-float a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* 🔸 redondo total */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* fondo negro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #fff; /* borde blanco fino */
+  }
+
+  .social-float a:hover {
+    transform: scale(1.1);
+    background-color: #ff9800; /* color al pasar el mouse */
+    border-color: #ff9800;
+  }
+
+  .social-float img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* Versión móvil */
+  @media (max-width: 600px) {
+    .social-float {
+      bottom: 15px;
+      right: 15px;
+      gap: 10px;
+    }
+    .social-float a {
+      width: 48px;
+      height: 48px;
+    }
+    .social-float img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="social-float">
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@ciscotc?_t=ZN-90Pnx75UbJe&_r=1" target="_blank" aria-label="TikTok">
+    <img src="images/tiktok.png" alt="TikTok">
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/17EY2BF9Fs/" target="_blank" aria-label="Facebook">
+    <img src="images/facebook.png" alt="Facebook">
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- ================= SECCIÓN ================= -->
+<style>
+/* Eliminar rayas automáticas de la plantilla */
+h1::before, h1::after, h2::before, h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Forzar que heading_main apile verticalmente y centre */
+.heading_main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
+.heading_main h2,
+.heading_main h1 {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0.4rem 0 !important;
+  color: inherit !important;
+}
+
+/* Línea naranja única y centrada */
+.heading_main .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 8px auto !important;
+  display: block !important;
+}
+
+/* Evitar flotados inesperados de la plantilla */
+.heading_main * {
+  float: none !important;
+}
+</style>
+
+
+
+
+
+<!-- section -->
+<div class="section layout_padding Vision_bg">
+  <div class="container">
+    <div class="row">
+
+      <!-- COLUMNA TEXTO (IZQUIERDA) -->
+      <div class="col-md-6">
+        <div class="full paddding_left_15">
+
+          <!-- ENCABEZADO CENTRADO -->
+          <div class="heading_main">
+            <!-- Subtítulo -->
+            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
+              Un Camino Diferente
+            </h2>
+
+            <!-- Línea naranja -->
+            <div class="orange-line" aria-hidden="true"></div>
+
+            <!-- Título -->
+            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
+               Cómo tomar decisiones fuera de lo común para alcanzar éxito y libertad financiera
+            </h1>
+          </div>
+        </div>
+
+        <!-- TEXTO -->
+        <div class="full paddding_left_15">
+          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+
+<p>
+  La libertad financiera no es un destino mágico al que se llega por azar, es una construcción consciente que nace de decisiones inteligentes tomadas cada día. No se trata únicamente de ganar más dinero, sino de aprender a multiplicarlo, protegerlo y ponerlo a trabajar a nuestro favor. La diferencia entre quienes permanecen atrapados en la rutina y quienes alcanzan independencia radica en la mentalidad con la que enfrentan la vida: unos se conforman con esperar, otros deciden crear.
+</p>
+
+<p>
+  Este despertar comienza al comprender que el tiempo es nuestro recurso más valioso y que desperdiciarlo en un camino lento y lleno de promesas vacías es renunciar a la posibilidad de vivir con plenitud. La verdadera riqueza surge cuando dejamos de intercambiar horas por un salario limitado y comenzamos a construir activos, sistemas y oportunidades que crecen con nosotros y nos permiten escalar sin depender exclusivamente de nuestro esfuerzo personal.
+</p>
+
+<p>
+  Nuestro propósito es inspirar a quienes leen estas palabras a tomar el control de sus finanzas, a cuestionar lo establecido y a dar pasos firmes hacia una vida abundante y con propósito. No se trata de fórmulas mágicas, sino de visión, disciplina y acción estratégica. Quien comprende esto, despierta; y quien despierta, transforma su vida para siempre.
+</p>
+
+<p>
+  Muchos pasan la vida entera trabajando sin detenerse a pensar si el camino en el que están los llevará realmente a la vida que desean. Corren de un lado a otro, llenos de responsabilidades, deudas y preocupaciones, mientras el tiempo se les escapa. Viven esperando que algún día “las cosas mejoren”, sin darse cuenta de que ese día nunca llega por sí solo.
+</p>
+
+<p>
+  El verdadero cambio comienza cuando alguien se atreve a despertar. Despertar significa cuestionar lo que siempre se nos dijo: que había que estudiar, conseguir un trabajo estable, ahorrar poco a poco y esperar décadas para disfrutar de una pensión incierta. Despertar es mirar más allá de lo común y entender que existen otros caminos, más rápidos, más inteligentes y, sobre todo, más alineados con una vida de propósito.
+</p>
+
+<p>
+  La riqueza no es solo acumular dinero. La riqueza es tener la libertad de elegir cómo vivir, de dedicar tiempo a lo que importa, de construir un futuro que no dependa únicamente de nuestro esfuerzo diario. Y para llegar ahí, no se necesita suerte, se necesita visión, educación y acción.
+</p>
+
+<p>
+  Quien despierta descubre que el dinero no debe ser el fin, sino la herramienta. Que la clave no está en trabajar más duro, sino en crear soluciones, en resolver problemas, en construir proyectos que generen valor real a los demás. Porque cuando creamos valor, la abundancia llega como consecuencia natural.
+</p>
+
+<p>
+  Pero despertar también implica valentía. Significa aceptar que habrá errores, que el miedo aparecerá y que no todos entenderán el camino que decides tomar. Sin embargo, quienes se mantienen firmes, quienes aprenden y perseveran, son los que logran alcanzar esa independencia que parecía imposible.
+</p>
+
+<p>
+  El futuro pertenece a quienes dejan de soñar pasivamente y comienzan a diseñarlo activamente. Cada paso, por pequeño que sea, acerca a una vida más libre, más consciente y más plena. El momento perfecto no existe; lo único que existe es la decisión de empezar ahora.
+</p>
+
+          </section>
+        </div>
+      </div>
+
+      <!-- COLUMNA IMAGEN (DERECHA) -->
+      <div class="col-md-6">
+        <div class="full text_align_right_img">
+          <img alt="Vision de riqueza" src="images/img33.png" style="max-width:100%; height:auto;"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
+
+
+           
+
+
+
+<!-- End Banner -->
+<!-- section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Columna Imagen -->
+            <div class="col-md-6">
+                <div class="full text_align_right_img">
+                    <img src="images/cmb.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
+                </div>
+            </div>
+
+            <!-- Columna Texto -->
+            <div class="col-md-6 layout_padding">
+                <div class="full paddding_left_15">
+                    <div class="heading_main text_align_left">
+
+<style>
+/* Esto elimina cualquier raya que venga por defecto */
+h1::before, 
+h1::after, 
+h2::before, 
+h2::after {
+  content: none !important;
+  display: none !important;
+}
+</style>
+
+<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+
+    <!-- Subtítulo -->
+    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
+        Cómo aprovechar la tecnología, la inversión y los negocios digitales para crecer
+    </h2>
+
+    <!-- ÚNICA línea naranja -->
+    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+
+    <!-- Título principal -->
+    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
+        2025 - El Año de las Oportunidades Financieras
+    </h1>
+
+</div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
+                    
+
+
+
+ <p>
+            Todo despertar requiere un momento de decisión. Un punto de quiebre en el que dejamos de justificar la inercia y empezamos a caminar hacia la vida que realmente queremos. Ese momento no llega con la suerte, ni con la espera pasiva, sino con la valentía de asumir responsabilidad plena sobre lo que somos y lo que aspiramos a ser.
+          </p>
+
+        <p>
+            El conocimiento, por sí solo, es estéril si no se convierte en acción. Las estrategias, las herramientas y las ideas más brillantes carecen de poder si permanecen en teoría. Lo que marca la diferencia entre quienes transforman su vida y quienes permanecen atrapados en la rutina es la capacidad de actuar con determinación, incluso en medio de la incertidumbre.
+          </p>
+
+      <p>
+            Este llamado no es una invitación superficial ni un recurso motivacional vacío: es un recordatorio de que el tiempo no se repite, de que cada día perdido es una oportunidad que no regresa. Es una exhortación a tomar el control de los recursos más valiosos que posees —tu mente, tu tiempo y tu energía— y dirigirlos hacia la construcción de un futuro que no dependa de terceros, sino de tu propia visión.
+          </p>
+
+        <p>
+            La libertad, en cualquier forma, no se concede: se conquista. Y se conquista cuando dejas de caminar en la vía lenta, cuando te atreves a romper con la comodidad de lo “aceptable” y eliges el camino de la creación, de la innovación y del progreso acelerado. No es un recorrido sencillo, pero es el único que garantiza que tu vida no quede reducida a sobrevivir en lugar de vivir plenamente.
+          </p>
+
+    <p>
+            Hoy, más que nunca, la invitación es clara: deja atrás la espera, rompe con la rutina y abraza el despertar de tu potencial. No esperes condiciones perfectas, porque no existen. No postergues tus decisiones, porque el tiempo no hace pausas. Empieza ahora, con lo que tienes, desde donde estás. Tu vida puede transformarse en la medida en que tú decidas transformarla.
+          </p>
+ <p>
+            Este es el llamado. La decisión, en última instancia, es únicamente tuya.
+          </p>
+
+</div>
+        <div class="full paddding_left_15">
+          <a class="main_bt" href="#">Volver a Inicio &gt;</a>
+        </div>
+      </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end section -->
+<!-- Start Footer -->
+<footer class="footer-box">
+<div class="container">
+<div class="row">
+<div class="col-md-12 white_fonts">
+<div class="row">
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<h3>Enlaces rápidos</h3>
+</div>
+<div class="full">
+<ul class="menu_footer">
+
+<li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+<li class="nav-item"><a class="nav-link" href="inversion.html">Inversión</a></li>
+<li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+<li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+<li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+
+
+
+
+
+
+                   
+</ul>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<div class="footer_blog full white_fonts">
+<h3>Sugerencias</h3>
+<p>"Creado para quienes buscan crecer sin perder su esencia."</p>
+<div class="newsletter_form">
+<form action="index.html">
+<input name="#" placeholder="Email" required="" type="email"/>
+<button>Enviar</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<div class="footer_blog full white_fonts">
+<h3>Contactos</h3>
+<ul class="full">
+
+
+<li><img src="images/i5.png"><span>Global Inspiration Hub<br>Código Millonario, Worldwide</span></li>
+<li><img src="images/i6.png"/><span>codigomillonarioblog@gmail.com</span></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- End Footer -->
+<div class="footer_bottom">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<p class="crp">© Código Millonario 2025 · Todos los derechos reservados</p>
+</div>
+</div>
+</div>
+</div>
+<a class="hvr-radial-out" href="#" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- ALL JS FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.pogo-slider.min.js"></script>
+<script src="js/slider-index.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/form-validator.min.js"></script>
+<script src="js/contact-form-script.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/images-loded.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
