@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“Ideas Diferentes que Cambian tu Mentalidad Financiera y Aceleran tu Independencia”</title>
+<!-- Favicon -->
+<link rel="icon" type="images/png" href="images/joe.png">
+<link rel="shortcut icon" href="images/joe.png" type="images/png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="css/pogo-slider.min.css">
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    /* ======== ESTILO GLOBAL ======== */
+    body {
+      background-color: #000;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, div, strong {
+      color: #ffffff !important;
+    }
+
+    /* ======== NAVBAR MODERNO ======== */
+    .navbar {
+      background: #000;
+      border-bottom: 2px solid #ff9800;
+      padding: 0.8rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      max-width: 110px;
+      height: auto;
+      transition: 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      opacity: 0.9;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #ff9800;
+      transition: 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff9800 !important;
+    }
+
+    /* ======== BOTÓN HAMBURGUESA ======== */
+    .navbar-toggler {
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -7px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 7px;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon {
+      background: transparent;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    /* ======== MENU RESPONSIVO ======== */
+    @media (max-width: 992px) {
+      .navbar-brand img {
+        max-width: 85px;
+      }
+
+      .navbar-collapse {
+        background: #000;
+        border-top: 1px solid #222;
+        transition: max-height 0.4s ease;
+        overflow: hidden;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      /* 🔸 Corregir el ancho de todo el contenido */
+      body, .container, .pogoSlider, .slide_text, .pogoSlider-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .slide_text {
+        padding: 0 15px;
+      }
+
+      p, h3, h1, h2 {
+        text-align: center;
+        width: 100% !important;
+      }
+    }
+
+    /* ======== BANNER ======== */
+    .ulockd-home-slider {
+      position: relative;
+      margin-top: 90px;
+    }
+
+    .pogoSlider-slide {
+      height: 420px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slide_text h3 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 600;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .slide_text h3 {
+        font-size: 26px;
+      }
+    }
+
+
+
+
+.section p {
+  text-align: justify;
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Código Millonario">
+      </a>
+
+      <button class="navbar-toggler" type="button" id="menu-toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="inversion.html">Inversión</a></li>
+          <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+          <li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.pogo-slider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Inicializar slider
+      $('#js-main-slider').pogoSlider({
+        autoplay: true,
+        generateNav: false,
+        displayProgess: true,
+        preserveTargetSize: true,
+        targetWidth: 1000,
+        targetHeight: 300,
+      }).data('plugin_pogoSlider');
+
+      // ✅ Menú hamburguesa: abrir/cerrar correctamente
+      $('#menu-toggle').on('click', function () {
+        $(this).toggleClass('active');
+        $('#navbarNav').slideToggle(300);
+      });
+
+      // ✅ Cerrar menú al hacer clic en un enlace
+      $('.navbar-nav .nav-link').on('click', function () {
+        if ($(window).width() < 992) {
+          $('#menu-toggle').removeClass('active');
+          $('#navbarNav').slideUp(300);
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+<!-- ======== BOTONES FLOTANTES DE REDES REDONDOS ======== -->
+<style>
+  .social-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+  }
+
+  .social-float a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* 🔸 redondo total */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* fondo negro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #fff; /* borde blanco fino */
+  }
+
+  .social-float a:hover {
+    transform: scale(1.1);
+    background-color: #ff9800; /* color al pasar el mouse */
+    border-color: #ff9800;
+  }
+
+  .social-float img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* Versión móvil */
+  @media (max-width: 600px) {
+    .social-float {
+      bottom: 15px;
+      right: 15px;
+      gap: 10px;
+    }
+    .social-float a {
+      width: 48px;
+      height: 48px;
+    }
+    .social-float img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="social-float">
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@ciscotc?_t=ZN-90Pnx75UbJe&_r=1" target="_blank" aria-label="TikTok">
+    <img src="images/tiktok.png" alt="TikTok">
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/17EY2BF9Fs/" target="_blank" aria-label="Facebook">
+    <img src="images/facebook.png" alt="Facebook">
+  </a>
+</div>
+
+
+
+
+
+
+
+
+<!-- End header -->
+<!-- Start Banner -->
+<style>
+.inner_page_banner {
+background-color: #000;
+
+
+
+  background-size: cover;
+  padding: 80px 0; /* Para que tenga altura visible */
+  color: white; /* Texto claro sobre la imagen */
+  text-align: center; /* Centra el texto */
+}
+.banner_title h3 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+</style>
+<div class="section inner_page_banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner_title">
+          <h3>   </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- End Banner -->
+<!-- section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Columna Imagen -->
+            <div class="col-md-6">
+                <div class="full text_align_right_img">
+                    <img src="images/cmh.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
+                </div>
+            </div>
+
+            <!-- Columna Texto -->
+            <div class="col-md-6 layout_padding">
+                <div class="full paddding_left_15">
+                    <div class="heading_main text_align_left">
+
+<style>
+/* Esto elimina cualquier raya que venga por defecto */
+h1::before, 
+h1::after, 
+h2::before, 
+h2::after {
+  content: none !important;
+  display: none !important;
+}
+</style>
+
+<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+
+    <!-- Subtítulo -->
+    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
+           Ideas Diferentes que Cambian el Chip Financiero
+    </h2>
+
+    <!-- ÚNICA línea naranja -->
+    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+
+    <!-- Título principal -->
+    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
+        Estrategias prácticas para principiantes que buscan invertir con confianza
+    </h1>
+
+</div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
+                    
+ 
+
+
+
+    <p>
+           
+            Muchas veces, lo que separa a quienes transforman sus finanzas de quienes permanecen en el mismo ciclo, 
+            no es la falta de oportunidades, sino la manera de ver las cosas. Cambiar la mentalidad implica adoptar 
+            perspectivas nuevas, cuestionar lo establecido y atreverse a pensar distinto.
+          </p>
+
+         
+    <p>
+            <b>1. Hazte preguntas incómodas</b><br>
+            En lugar de leer consejos genéricos, comienza a cuestionarte seriamente: 
+            ¿qué pasaría si sigo haciendo lo mismo durante los próximos diez años?, 
+            ¿qué cosas estoy tolerando que me impiden crecer?, 
+            ¿mi dinero está trabajando más que yo o soy yo quien lo esclaviza? 
+            Estas preguntas abren la mente mucho más que frases bonitas.
+          </p>
+
+          
+    <p>
+            <b>2. Imita modelos ocultos, no famosos</b><br>
+            En vez de enfocarte únicamente en grandes referentes globales como Elon Musk o Jeff Bezos, 
+            observa a esos emprendedores locales que con pocos recursos construyeron cadenas de negocios 
+            o empresas sólidas. La inspiración más valiosa está en quienes empezaron con lo mismo que tú tienes hoy.
+          </p>
+
+         
+    <p>
+            <b>3. Convierte gastos en ingresos</b><br>
+            Casi cualquier gasto puede transformarse en una oportunidad si lo ves con otros ojos. 
+            Si pagas gimnasio, podrías documentar tu progreso en un blog o canal. 
+            Si compras ropa, podrías revender o crear reseñas. 
+            Incluso tus hobbies pueden convertirse en comunidades rentables si los compartes de manera estratégica.
+          </p>
+
+         
+    <p>
+            <b>4. La regla del 1%</b><br>
+            No es necesario transformar tu vida de un día para otro. 
+            Si mejoras tan solo un 1% diario en hábitos, ahorro o habilidades, 
+            en un año habrás generado un cambio monumental. 
+            La riqueza se construye a partir de mejoras pequeñas pero constantes.
+          </p>
+
+         
+    <p>
+            <b>5. Piensa como inversionista, no como trabajador</b><br>
+            Antes de preguntarte cuánto ganas con una actividad, pregúntate qué te deja 
+            incluso cuando dejes de trabajar en ella. 
+            La clave está en crear activos que liberen tu tiempo en lugar de atarte más.
+          </p>
+
+        
+    <p>
+            <b>6. El poder del “No”</b><br>
+            La gente verdaderamente exitosa entiende que decir NO a compromisos, distracciones 
+            o tareas que no suman es tan importante como decir SÍ a las que aportan valor. 
+            Aprender a priorizar es una habilidad financiera y de vida.
+          </p>
+
+         
+    <p>
+            <b>7. Ideas locas valen oro</b><br>
+            Muchas grandes fortunas comenzaron con ideas que parecían absurdas: vender agua embotellada, 
+            subir videos jugando videojuegos o alquilar habitaciones en casas de desconocidos. 
+            Las ideas más inusuales suelen ser las más rentables porque pocos se atreven a llevarlas a cabo.
+          </p>
+
+      
+    <p>
+            <b>"El Poder de Ver lo Invisible"</b><br>
+            El verdadero cambio financiero no proviene de acumular frases motivacionales, 
+            sino de modificar la forma en la que percibes tu entorno. 
+            La próxima gran oportunidad puede no estar en los libros de los gurús, 
+            sino en la capacidad que tengas de observar lo que otros ignoran.
+          </p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= SECCIÓN ================= -->
+<style>
+/* Eliminar rayas automáticas de la plantilla */
+h1::before, h1::after, h2::before, h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Forzar que heading_main apile verticalmente y centre */
+.heading_main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
+.heading_main h2,
+.heading_main h1 {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0.4rem 0 !important;
+  color: inherit !important;
+}
+
+/* Línea naranja única y centrada */
+.heading_main .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 8px auto !important;
+  display: block !important;
+}
+
+/* Evitar flotados inesperados de la plantilla */
+.heading_main * {
+  float: none !important;
+}
+</style>
+
+<!-- section -->
+<div class="section layout_padding Vision_bg">
+  <div class="container">
+    <div class="row">
+
+      <!-- COLUMNA TEXTO (IZQUIERDA) -->
+      <div class="col-md-6">
+        <div class="full paddding_left_15">
+
+          <!-- ENCABEZADO CENTRADO -->
+          <div class="heading_main">
+            <!-- Subtítulo -->
+            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
+             Cómo Prevenir Errores al Invertir desde el Inicio
+            </h2>
+
+            <!-- Línea naranja -->
+            <div class="orange-line" aria-hidden="true"></div>
+
+            <!-- Título -->
+            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
+               Estrategias prácticas para principiantes que buscan invertir con confianza
+            </h1>
+          </div>
+        </div>
+
+        <!-- TEXTO -->
+        <div class="full paddding_left_15">
+          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+
+<p>
+  
+
+            Cuando una persona comienza a interesarse en el mundo de las inversiones, suele enfrentarse a una mezcla de entusiasmo y ansiedad. 
+            Esa energía inicial puede ser positiva, pero también peligrosa si no se canaliza de la manera correcta. La impaciencia por ver resultados inmediatos, 
+            la tendencia a seguir modas financieras o el impulso de lanzarse a la primera oportunidad que parece rentable, pueden llevar a cometer errores que, 
+            en lugar de acercar a la libertad financiera, terminan generando frustración y estancamiento.
+          </p>
+
+         <p>
+            El camino hacia unas finanzas sólidas no se trata de suerte ni de movimientos impulsivos, sino de estrategia, disciplina y visión a largo plazo. 
+            A continuación, se presentan algunos de los errores más frecuentes que los inversionistas principiantes suelen cometer y, lo más importante, cómo evitarlos desde el principio.
+          </p>
+
+          <hr/>
+
+          <h3>1. Creer que invertir es lo mismo que ahorrar</h3>
+          <p>
+            El ahorro es una práctica fundamental, pero no debe confundirse con la inversión. Ahorrar protege tu capital, sin embargo, no lo multiplica. 
+            Mantener dinero en una cuenta bancaria sin una estrategia clara únicamente hace que pierda valor con el tiempo debido a la inflación.
+          </p>
+
+         <p>
+            La inversión implica poner tu dinero a trabajar para generar rendimientos. Más allá de guardar sin rumbo, es clave destinar una parte de tus ahorros a activos capaces de generar ingresos recurrentes o de apreciarse con el tiempo.
+          </p>
+
+          <hr/>
+
+          <h3>2. Depender de una sola fuente de ingresos</h3>
+          <p>
+            Uno de los errores más graves es creer que el salario o los ingresos de un único negocio serán suficientes para sostener la vida financiera a largo plazo. 
+            Cuando dependes de una sola fuente, vives en una situación de fragilidad: basta un imprevisto, una crisis económica o un cambio en el mercado laboral para que toda tu estabilidad se vea comprometida.
+          </p>
+
+          <p>
+            La solución está en construir múltiples fuentes de ingreso, ya sea a través de inversiones financieras, negocios digitales, activos inmobiliarios o creación de propiedad intelectual. 
+            La diversificación no es un lujo, es una estrategia de supervivencia.
+          </p>
+
+          <hr/>
+
+          <h3>3. Buscar atajos y dinero rápido</h3>
+         <p>
+            El deseo de enriquecerse en poco tiempo ha llevado a muchos a caer en fraudes, estafas y promesas de “inversiones milagrosas”. 
+            Esta mentalidad de inmediatez es una de las principales razones por las que tantos pierden dinero.
+          </p>
+
+         <p>
+            La regla fundamental es sencilla: si algo suena demasiado bueno para ser verdad, probablemente lo sea. 
+            En lugar de apostar por supuestas fórmulas mágicas, lo recomendable es enfocarse en construir sistemas, proyectos y activos que puedan escalar con el tiempo.
+          </p>
+
+          <hr/>
+
+          <h3>4. Pensar como consumidor en lugar de como productor</h3>
+         <p>
+            Los consumidores concentran sus recursos en pasivos: lujos, gadgets y deudas innecesarias. 
+            Los productores, en cambio, utilizan su dinero para invertir en la creación de activos: negocios, innovación o propiedad intelectual.
+          </p>
+
+          <p>
+            Cada vez que realices un gasto, pregúntate si este te acerca a construir riqueza o si únicamente está drenando tus ingresos. 
+            Este hábito mental marca la diferencia entre quienes construyen patrimonio y quienes simplemente lo consumen.
+          </p>
+
+          <hr/>
+
+          <h3>5. No invertir en uno mismo primero</h3>
+          <p>
+            Muchos buscan multiplicar su dinero sin haberse preparado antes. Pretender invertir sin conocimientos es como querer cosechar sin haber sembrado. 
+            La base de toda inversión exitosa es la educación financiera, el desarrollo de nuevas habilidades y la formación personal.
+          </p>
+
+          <p>
+            Invertir en uno mismo significa adquirir conocimientos, aprender a gestionar riesgos y desarrollar competencias que permitan tomar mejores decisiones. 
+            Ninguna inversión externa será realmente exitosa si no está respaldada por un inversionista que entiende lo que está haciendo.
+          </p>
+
+          <hr/>
+
+          <h3>Cómo aplicar estas lecciones desde hoy</h3>
+          <ul style="text-align: justify;">
+            <li>Separa un capital destinado únicamente a inversión, aunque sea un pequeño porcentaje de tus ingresos.</li>
+            <li>Empieza con un vehículo sencillo: un activo financiero accesible, una inversión digital o un curso que luego se convierta en producto.</li>
+            <li>Piensa en escalabilidad: prioriza lo que puede crecer con el tiempo sin requerir un aumento proporcional de esfuerzo.</li>
+            <li>Evalúa y ajusta constantemente: cada resultado, positivo o negativo, es una lección que te acerca a tu objetivo.</li>
+          </ul>
+
+          <hr/>
+
+          <h3>Conclusión</h3>
+          <p>
+            Invertir no es un evento aislado, sino un proceso continuo que requiere paciencia, disciplina y visión a largo plazo. 
+            La verdadera libertad financiera no surge de atajos ni de supuestas fórmulas rápidas, sino de evitar los errores que tantos han cometido antes y de tomar decisiones inteligentes de manera consistente.
+          </p>
+
+          <p>
+            Quien comprende esto y actúa con estrategia desde el inicio no solo protege su dinero, sino que construye un camino sólido hacia la independencia y la abundancia.
+          </p>
+
+
+
+          </section>
+        </div>
+      </div>
+
+      <!-- COLUMNA IMAGEN (DERECHA) -->
+      <div class="col-md-6">
+        <div class="full text_align_right_img">
+          <img alt="Vision de riqueza" src="images/cmg.png" style="max-width:100%; height:auto;"/>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end section -->
+<!-- Start Footer -->
+<footer class="footer-box">
+<div class="container">
+<div class="row">
+<div class="col-md-12 white_fonts">
+<div class="row">
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<h3>Enlaces rápidos</h3>
+</div>
+<div class="full">
+<ul class="menu_footer">
+
+                        <li><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li><a class="nav-link" href="Vision.html">Vision</a></li>
+                        <li><a class="nav-link" href="Inversion.html">Inversion</a></li>
+                        <li><a class="nav-link" href="Consejos.html">Consejos</a></li>
+                        <li><a class="nav-link" href="ideas.html">Ideas</a></li>
+                        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+
+
+</ul>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<div class="footer_blog full white_fonts">
+<h3>Sugerencias</h3>
+<p>"Creado para quienes buscan crecer sin perder su esencia."</p>
+<div class="newsletter_form">
+<form action="index.html">
+<input name="#" placeholder="Email" required="" type="email"/>
+<button>Enviar</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 col-lg-3">
+<div class="full">
+<div class="footer_blog full white_fonts">
+<h3>Contactos</h3>
+<ul class="full">
+
+
+<li><img src="images/i5.png"><span>Global Inspiration Hub<br>Código Millonario, Worldwide</span></li>
+<li><img src="images/i6.png"/><span>codigomillonarioblog@gmail.com</span></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- End Footer -->
+<div class="footer_bottom">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<p class="crp">© Código Millonario 2025 · Todos los derechos reservados</p>
+</div>
+</div>
+</div>
+</div>
+<a class="hvr-radial-out" href="#" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- ALL JS FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.pogo-slider.min.js"></script>
+<script src="js/slider-index.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/form-validator.min.js"></script>
+<script src="js/contact-form-script.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/images-loded.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

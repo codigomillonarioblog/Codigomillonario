@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“La Nueva Economía No Espera: Toma el Control de tu Futuro Financiero”</title>
+<!-- Favicon -->
+<link rel="icon" type="images/png" href="images/joe.png">
+<link rel="shortcut icon" href="images/joe.png" type="images/png">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="css/pogo-slider.min.css">
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <style>
+    /* ======== ESTILO GLOBAL ======== */
+    body {
+      background-color: #000;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    p, h1, h2, h3, h4, h5, h6, span, li, div, strong {
+      color: #ffffff !important;
+    }
+
+    /* ======== NAVBAR MODERNO ======== */
+    .navbar {
+      background: #000;
+      border-bottom: 2px solid #ff9800;
+      padding: 0.8rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      max-width: 110px;
+      height: auto;
+      transition: 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      opacity: 0.9;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 0;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #ff9800;
+      transition: 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ff9800 !important;
+    }
+
+    /* ======== BOTÓN HAMBURGUESA ======== */
+    .navbar-toggler {
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -7px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 7px;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon {
+      background: transparent;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .navbar-toggler.active .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    /* ======== MENU RESPONSIVO ======== */
+    @media (max-width: 992px) {
+      .navbar-brand img {
+        max-width: 85px;
+      }
+
+      .navbar-collapse {
+        background: #000;
+        border-top: 1px solid #222;
+        transition: max-height 0.4s ease;
+        overflow: hidden;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      /* 🔸 Corregir el ancho de todo el contenido */
+      body, .container, .pogoSlider, .slide_text, .pogoSlider-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .slide_text {
+        padding: 0 15px;
+      }
+
+      p, h3, h1, h2 {
+        text-align: center;
+        width: 100% !important;
+      }
+    }
+
+    /* ======== BANNER ======== */
+    .ulockd-home-slider {
+      position: relative;
+      margin-top: 90px;
+    }
+
+    .pogoSlider-slide {
+      height: 420px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slide_text h3 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 600;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .slide_text h3 {
+        font-size: 26px;
+      }
+    }
+
+
+.section p {
+  text-align: justify;
+  max-width: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Código Millonario">
+      </a>
+
+      <button class="navbar-toggler" type="button" id="menu-toggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="inversion.html">Inversión</a></li>
+          <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
+          <li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner / Slider -->
+  <div class="ulockd-home-slider">
+    <div class="pogoSlider" id="js-main-slider">
+      <div class="pogoSlider-slide" style="background-image: url('images/banner1.jpg');">
+        <div class="slide_text">
+          <h3>CODIGO MILLONARIO<br><strong>AHORRA</strong></h3>
+        </div>
+      </div>
+      <div class="pogoSlider-slide" style="background-image: url('images/banner2.jpg');">
+        <div class="slide_text">
+          <h3>CODIGO MILLONARIO<br><strong>INVIERTE</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.pogo-slider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Inicializar slider
+      $('#js-main-slider').pogoSlider({
+        autoplay: true,
+        generateNav: false,
+        displayProgess: true,
+        preserveTargetSize: true,
+        targetWidth: 1000,
+        targetHeight: 300,
+      }).data('plugin_pogoSlider');
+
+      // ✅ Menú hamburguesa: abrir/cerrar correctamente
+      $('#menu-toggle').on('click', function () {
+        $(this).toggleClass('active');
+        $('#navbarNav').slideToggle(300);
+      });
+
+      // ✅ Cerrar menú al hacer clic en un enlace
+      $('.navbar-nav .nav-link').on('click', function () {
+        if ($(window).width() < 992) {
+          $('#menu-toggle').removeClass('active');
+          $('#navbarNav').slideUp(300);
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+<!-- ======== BOTONES FLOTANTES DE REDES REDONDOS ======== -->
+<style>
+  .social-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+  }
+
+  .social-float a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* 🔸 redondo total */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* fondo negro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    border: 2px solid #fff; /* borde blanco fino */
+  }
+
+  .social-float a:hover {
+    transform: scale(1.1);
+    background-color: #ff9800; /* color al pasar el mouse */
+    border-color: #ff9800;
+  }
+
+  .social-float img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* Versión móvil */
+  @media (max-width: 600px) {
+    .social-float {
+      bottom: 15px;
+      right: 15px;
+      gap: 10px;
+    }
+    .social-float a {
+      width: 48px;
+      height: 48px;
+    }
+    .social-float img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>
+
+<div class="social-float">
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@ciscotc?_t=ZN-90Pnx75UbJe&_r=1" target="_blank" aria-label="TikTok">
+    <img src="images/tiktok.png" alt="TikTok">
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/17EY2BF9Fs/" target="_blank" aria-label="Facebook">
+    <img src="images/facebook.png" alt="Facebook">
+  </a>
+</div>
+
+
+<!-- End Banner -->
+<!-- section -->
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Columna Imagen -->
+            <div class="col-md-6">
+                <div class="full text_align_right_img">
+                    <img src="images/img1.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
+                </div>
+            </div>
+
+            <!-- Columna Texto -->
+            <div class="col-md-6 layout_padding">
+                <div class="full paddding_left_15">
+                    <div class="heading_main text_align_left">
+
+<style>
+/* Esto elimina cualquier raya que venga por defecto */
+h1::before, 
+h1::after, 
+h2::before, 
+h2::after {
+  content: none !important;
+  display: none !important;
+}
+</style>
+
+<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+
+    <!-- Subtítulo -->
+    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
+        Cómo aprovechar la tecnología, la inversión y los negocios digitales para crecer
+    </h2>
+
+    <!-- ÚNICA línea naranja -->
+    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+
+    <!-- Título principal -->
+    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
+        2025 - El Año de las Oportunidades Financieras
+    </h1>
+
+</div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
+                    
+<p>
+    El mundo nunca se había movido tan rápido como ahora. La tecnología, los negocios digitales y las inversiones han cambiado por completo la forma en que las personas construyen riqueza. 
+    El 2025 no es un año cualquiera, es un punto de quiebre: o te quedas mirando cómo otros hacen dinero, o decides tomar el control de tu futuro.
+</p>
+
+<p>
+    En <strong>Código Millonario</strong> creemos que la riqueza no es cuestión de suerte, sino de visión, educación y acción. Por eso, este año queremos darte las herramientas necesarias para que construyas un camino sólido hacia tu libertad financiera.
+</p>
+
+<h3>Nuevas formas de generar dinero en 2025</h3>
+<ol>
+    <li><strong>Inteligencia Artificial (IA):</strong> Las empresas están pagando fortunas por soluciones automatizadas. Desde bots que responden clientes hasta programas que predicen ventas. Si aprendes a usar la IA, puedes crear servicios muy rentables.</li>
+    <li><strong>Negocios Digitales:</strong> E-commerce, cursos online, marketing de afiliados… nunca fue tan fácil comenzar un negocio desde cero con una inversión mínima.</li>
+    <li><strong>Criptomonedas y Web3:</strong> Aunque muchos dudan, el blockchain sigue creciendo y creando oportunidades. Invertir con inteligencia (y no con emoción) puede multiplicar tu capital.</li>
+    <li><strong>Inversiones en la vida real:</strong> Bienes raíces digitales, startups y acciones de empresas tecnológicas siguen siendo una apuesta sólida para quienes piensan a largo plazo.</li>
+    <li><strong>Servicios especializados:</strong> Diseño, programación, desarrollo multimedia, creación de contenido… cada vez más personas prefieren pagarle a un experto en línea antes que a una gran empresa.</li>
+</ol>
+
+<h3>La mentalidad correcta</h3>
+<p>
+    La mayoría de la gente quiere resultados rápidos, pero el verdadero secreto está en pensar como inversionista. 
+    No se trata de gastar menos, sino de aprender dónde poner tu dinero para que trabaje por ti.  
+    El dinero que guardas sin movimiento pierde valor; el dinero que inviertes inteligentemente crece.
+</p>
+
+<h3>El código millonario del 2025</h3>
+<ul>
+    <li>Aprende una habilidad digital.</li>
+    <li>Crea una fuente de ingresos secundaria.</li>
+    <li>Invierte, aunque sea poco, pero hazlo de manera constante.</li>
+    <li>Rodéate de personas que piensan en grande.</li>
+    <li>Nunca dejes de aprender.</li>
+</ul>
+
+<p>
+    En <strong>Código Millonario</strong> no solo hablamos de dinero, hablamos de libertad, visión y futuro. 
+    El 2025 es tu oportunidad para comenzar.
+</p>
+
+<p><em>¿Vas a esperar a que otros lo hagan primero, o vas a tomar la decisión de cambiar tu vida ahora?</em></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- ================= SECCIÓN ================= -->
+<style>
+/* Eliminar rayas automáticas de la plantilla */
+h1::before, h1::after, h2::before, h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Forzar que heading_main apile verticalmente y centre */
+.heading_main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
+.heading_main h2,
+.heading_main h1 {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0.4rem 0 !important;
+  color: inherit !important;
+}
+
+/* Línea naranja única y centrada */
+.heading_main .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 8px auto !important;
+  display: block !important;
+}
+
+/* Evitar flotados inesperados de la plantilla */
+.heading_main * {
+  float: none !important;
+}
+</style>
+
+<!-- section -->
+<div class="section layout_padding Vision_bg">
+  <div class="container">
+    <div class="row">
+
+      <!-- COLUMNA TEXTO -->
+      <div class="col-md-6">
+        <div class="full paddding_left_15">
+
+          <!-- ENCABEZADO CENTRADO -->
+          <div class="heading_main">
+            <!-- Subtítulo -->
+            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
+              Estrategias innovadoras para emprender y crecer en la nueva economía digital
+            </h2>
+
+            <!-- Línea naranja -->
+            <div class="orange-line" aria-hidden="true"></div>
+
+            <!-- Título -->
+            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
+              10 Ideas de Negocio Rentable para 2025 (Versión Avanzada)
+            </h1>
+          </div>
+        </div>
+
+        <!-- TEXTO -->
+        <div class="full paddding_left_15">
+          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+            
+            <h3>1. Consultoría de Inteligencia Artificial para PYMES</h3>
+            <p>La inteligencia artificial dejó de ser una promesa y se convirtió en una necesidad. El mercado global supera los USD 400 mil millones en 2025, con un crecimiento anual del 23 %. La implementación de IA en servicios empresariales generará un impacto económico estimado en USD 15,7 billones.</p>
+            <p>Muchas empresas no saben por dónde empezar: ofréceles automatización con chatbots, análisis de datos, asistentes virtuales o generación de contenido. Estas soluciones pueden reducir costos hasta en un 30 % y aumentar los ingresos en un 39 %.</p>
+            <p><strong>Inversión inicial:</strong> baja (conocimiento + herramientas IA).<br>
+              <strong>Rentabilidad:</strong> muy alta—clientes pagan desde USD 300 hasta más de USD 3.000 por proyecto.</p>
+
+            <h3>2. Creación de contenido con marca personal y economía de creadores</h3>
+            <p>El ecosistema de creadores es cada vez más diverso y rentable. El 69 % genera ingresos a través de acuerdos de marca, además de publicidad, afiliados, cursos y productos propios. En plataformas como TikTok o YouTube, el contenido educativo y práctico es altamente demandado.</p>
+            <p>Cerca del 50 % de los creadores gana hasta USD 5.000 al año; un 17 % logra entre USD 30.000 y USD 100.000, y un 7 % supera los USD 100.000.</p>
+            <p><strong>Inversión inicial:</strong> mínima (celular y constancia).<br>
+              <strong>Rentabilidad:</strong> alta si diversificas (patrocinios, afiliados, infoproductos, asesorías).</p>
+
+            <h3>3. Franquicias digitales y micro SaaS</h3>
+            <p>Las franquicias digitales permiten escalar modelos probados sin necesidad de inventar desde cero. Con plataformas como Shopify, Systeme.io o WordPress puedes automatizar ventas, atención y marketing.</p>
+            <p><strong>Inversión inicial:</strong> media.<br>
+              <strong>Rentabilidad:</strong> escalable y recurrente.</p>
+
+            <h3>4. Agencia de automatización de negocios</h3>
+            <p>Los negocios quieren vender más con menos esfuerzo. Automatiza embudos de venta, correos, respuestas, reservas y facturación. Un negocio eficiente paga mejor.</p>
+            <p><strong>Inversión inicial:</strong> baja.<br>
+              <strong>Rentabilidad:</strong> alta—servicios premium.</p>
+
+            <h3>5. Servicios de IA como producto</h3>
+            <p>Crea plantillas, flujos de trabajo, bots o prompts personalizados y véndelos como productos digitales. El mercado de prompts profesionales crece aceleradamente.</p>
+            <p><strong>Inversión inicial:</strong> baja.<br>
+              <strong>Rentabilidad:</strong> pasiva.</p>
+
+            <h3>6. Academia online por suscripción</h3>
+            <p>La educación online representa más de USD 400 mil millones anuales. Plataformas como Hotmart, Kajabi o incluso Telegram Premium permiten crear comunidades de pago.</p>
+            <p><strong>Inversión inicial:</strong> media.<br>
+              <strong>Rentabilidad:</strong> mensual y escalable.</p>
+
+            <h3>7. Branding y posicionamiento para IA creators</h3>
+            <p>Miles de creadores no saben cómo diferenciarse. Ofrecer branding (nombres, imagen, estrategia de autoridad) es muy rentable.</p>
+            <p><strong>Inversión inicial:</strong> baja.<br>
+              <strong>Rentabilidad:</strong> alta.</p>
+
+            <h3>8. Aplicaciones y extensiones IA</h3>
+            <p>Si tienes socios técnicos, crear apps ligeras o extensiones útiles para creadores y empresas es un negocio millonario.</p>
+            <p><strong>Inversión inicial:</strong> media/alta.<br>
+              <strong>Rentabilidad:</strong> altísima si escalas.</p>
+
+            <h3>9. Producción de contenido automatizado para empresas</h3>
+            <p>La IA permite crear cientos de contenidos en segundos. Ofrecer paquetes de contenido automatizado es una solución muy buscada.</p>
+            <p><strong>Inversión inicial:</strong> baja.<br>
+              <strong>Rentabilidad:</strong> alta y recurrente.</p>
+
+            <h3>10. Comunidades privadas y mentorías exclusivas</h3>
+            <p>Las comunidades premium están revolucionando la forma en que se comparte conocimiento. Un grupo bien gestionado puede generar ingresos mensuales estables sin necesidad de grandes infraestructuras.</p>
+            <p><strong>Inversión inicial:</strong> mínima.<br>
+              <strong>Rentabilidad:</strong> mensual y escalable.</p>
+
+          </section>
+        </div>
+      </div>
+
+      <!-- COLUMNA IMAGEN -->
+      <div class="col-md-6">
+        <div class="full text_align_right_img">
+          <img src="images/uno.png" alt="Vision de riqueza" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+           
+
+
+
+
+
+
+
+
+            
+
+<!-- ================= SECCIÓN ================= -->
+<style>
+h1::before, 
+h1::after, 
+h2::before, 
+h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+.section-black {
+  background-color: #000 !important;
+  color: #fff !important;
+  width: 100%;
+}
+
+.section-black p, 
+.section-black li, 
+.section-black h1, 
+.section-black h2, 
+.section-black h3 {
+  color: #fff !important;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.section-black h1, 
+.section-black h2, 
+.section-black h3 {
+  text-align: center;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+}
+
+.section-black .text-right-col {
+  text-align: right;
+}
+
+.section-black blockquote {
+  border-left: 4px solid orange;
+  padding-left: 15px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #fff;
+}
+
+/* BOTÓN blanco */
+.section-black .main_bt {
+  display: inline-block;
+  color: #000;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.section-black .main_bt:hover {
+  background-color: #ccc;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+}
+</style>
+
+<div class="section-black">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="full text_align_right_img"></div>
+      </div>
+
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
+
+          <!-- Título y subtítulo centrados con línea centrada -->
+          <div style="text-align: center; padding: 20px;">
+            <h2 style="font-size: 18px; font-weight: normal; color: #ccc;">
+              Un enfoque creativo para construir valor y diferenciarse en el mercado
+            </h2>
+            <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+            <h1 style="font-size: 22px; font-weight: bold; color: #fff;">
+              Diseña, no intercambies
+            </h1>
+          </div>
+
+          <!-- Texto -->
+          <h2>El verdadero intercambio: de la transacción al diseño estratégico del valor</h2>
+
+          <p>Vivimos en una economía que premia la percepción de valor, no la cantidad de esfuerzo invertido. Sin embargo, el modelo educativo, laboral y cultural nos entrenó durante años para seguir una fórmula obsoleta: trabajar muchas horas, seguir instrucciones, cumplir metas impuestas, y aceptar una retribución fija.</p>
+
+          <p>Eso no es un intercambio. Eso es una transacción unidireccional que beneficia, en la mayoría de los casos, a quienes dominan el diseño del sistema.</p>
+
+          <p>La realidad es otra. En el mercado actual, el dinero no fluye hacia el que más trabaja. <strong>Fluye hacia el que mejor interpreta, organiza y entrega valor.</strong></p>
+
+          <h3>¿Qué significa realmente “intercambiar valor”?</h3>
+
+          <p>La mayoría cree que dar valor es lo mismo que “ser útil” o “hacer bien su trabajo”. Pero el valor no se mide por intención ni por esfuerzo. El valor se mide por <strong>impacto</strong>. Por <strong>transformación</strong>. Por la capacidad de cambiarle la vida (aunque sea un fragmento) a alguien que está dispuesto a pagar por ese cambio.</p>
+
+          <blockquote>“¿Qué efecto tiene lo que haces en la vida de los demás?”</blockquote>
+
+          <p>Un médico no cobra por diagnosticar: cobra por aliviar el dolor.<br>
+          Un diseñador no cobra por hacer logos: cobra por construir identidad, diferenciación y percepción.<br>
+          Un educador no cobra por transmitir datos: cobra por cambiar la manera en que alguien piensa, decide y actúa.</p>
+
+          <p><strong>¿Qué transformación puedes generar?</strong> Esa es tu moneda real en esta nueva economía.</p>
+
+          <h3>El dinero como consecuencia, no como objetivo</h3>
+
+          <p>En <strong>Código Millonario</strong> no abordamos el dinero como una meta en sí misma. Lo abordamos como un resultado. Como el <strong>efecto secundario de una arquitectura mental sólida</strong>, que te permite detectar oportunidades, crear soluciones, estructurarlas, y entregarlas al mercado con precisión.</p>
+
+          <p>Cuando entiendes esto, dejas de perseguir ingresos. Comienzas a diseñarlos.</p>
+
+          <p>Y ese diseño requiere tres fundamentos:</p>
+          <ul>
+            <li><strong>Lectura estratégica del entorno:</strong> Saber qué necesita el mercado, qué lo incomoda, qué lo obsesiona, qué busca pero no encuentra.</li>
+            <li><strong>Propuesta clara de valor:</strong> No basta con tener talento; hay que traducirlo en algo concreto, tangible, comercializable y diferenciador.</li>
+            <li><strong>Sistema de captura de valor:</strong> La estructura que convierte tu aporte en ingresos sostenibles, sin necesidad de vender tu tiempo cada vez.</li>
+          </ul>
+
+          <h3>El modelo tradicional colapsó (y eso es una oportunidad)</h3>
+
+          <p>El modelo de “trabajo duro → ascenso → jubilación” ya no es garantía de nada.  
+          La seguridad laboral es un mito. La estabilidad es temporal. Y lo más grave: <strong>la mayoría está intercambiando su recurso más valioso (el tiempo)</strong> por recompensas que no escalan.</p>
+
+          <p>La nueva generación de creadores, estrategas y emprendedores lo entendió:  
+          no se trata de trabajar más…  
+          se trata de <strong>construir sistemas que funcionen sin ti</strong>.</p>
+
+          <h3>El nuevo intercambio: diseño, transformación y libertad</h3>
+
+          <p>Esto no es autoayuda ni optimismo empresarial. Es pragmatismo puro.  
+          Si hoy te pagaran según el impacto que generas, ¿cuánto ganarías?</p>
+
+          <ul>
+            <li>De asalariado a diseñador de soluciones.</li>
+            <li>De ejecutor de tareas a constructor de sistemas.</li>
+            <li>De intercambiar tiempo… a <strong>crear activos que produzcan valor incluso cuando no estás presente</strong>.</li>
+          </ul>
+
+          <p><strong>No vendes productos ni servicios. Vendes evolución.</strong></p>
+
+          <p>El dinero fluye hacia quien puede acortar caminos, resolver dolores, y hacer que otros avancen más rápido con menos fricción.</p>
+
+          <p style="text-align: center; font-weight: bold; margin-top: 50px;">Bienvenido al nuevo intercambio.<br>Bienvenido a Código Millonario.</p>
+
+          
+
+        </div>
+      </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* Eliminar rayas automáticas de la plantilla */
+h1::before, h1::after, h2::before, h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Forzar que heading_main apile verticalmente y centre */
+.heading_main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
+.heading_main h2,
+.heading_main h1 {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0.4rem 0 !important;
+  color: inherit !important;
+}
+
+/* Línea naranja única y centrada */
+.heading_main .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 8px auto !important;
+  display: block !important;
+}
+
+/* Evitar flotados inesperados de la plantilla */
+.heading_main * {
+  float: none !important;
+}
+</style>
+
+<!-- section -->
+<div class="section layout_padding Vision_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="full paddding_left_15">
+          <div class="heading_main">
+
+            <!-- Subtítulo -->
+            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
+              Descubre cómo mantener estabilidad laboral mientras construyes tu camino hacia la libertad financiera
+            </h2>
+
+            <!-- Línea naranja (única) -->
+            <div class="orange-line" aria-hidden="true"></div>
+
+            <!-- Título -->
+            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
+              La Cuerda Dorada del Empleo Seguro
+            </h1>
+
+          </div>
+        </div>
+
+        <!-- Texto largo sin cambios -->
+        <div class="full paddding_left_15">
+          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+            <p>Mira, si de verdad hablamos en serio sobre generar riqueza, hay que dejar de lado esa mentalidad de “trabajo por horas, me pagan por horas”. Ese es el error más grande, y es lo que mantiene atrapadas a millones de personas en un ciclo que nunca termina. Tú puedes ser excelente en lo que haces, tener un título universitario, incluso conseguir un salario que suene atractivo, pero mientras tu ingreso esté atado directamente a tu tiempo, siempre habrá un límite.</p>
+
+            <p>El tiempo es un recurso no renovable. Se agota cada día, cada hora, cada segundo. Y por más que intentes, no puedes multiplicarlo. Entonces, ¿por qué basar tu seguridad financiera en algo tan frágil y limitado? La respuesta es clara: necesitas un sistema que funcione sin que tú estés presente, un vehículo que genere dinero aun mientras duermes, viajas o simplemente decides no trabajar.</p>
+
+            <h2>El espejismo del empleo seguro</h2>
+            <p>Mucha gente busca la tranquilidad de un sueldo fijo. Esa es la trampa. El famoso “empleo estable” es, en realidad, una cuerda dorada: brilla, se siente cómoda, pero te ata. Es como correr en una rueda de hámster. Avanzas, te esfuerzas, pero siempre estás en el mismo lugar.</p>
+
+            <p>Además, cuando dependes de un solo ingreso, estás construyendo tu vida sobre terreno prestado. El día que ese ingreso desaparezca —ya sea por despido, crisis económica o simple reemplazo— todo tu mundo se tambalea.</p>
+
+            <p>El verdadero poder está en diversificar y en crear un sistema que no dependa únicamente de tu presencia física.</p>
+
+            <h2>La diferencia entre trabajar y construir</h2>
+            <p>Trabajar es vender tu tiempo. Construir es crear algo que pueda sostenerse solo. El que trabaja, cambia horas por dinero. El que construye, cambia ideas, productos y soluciones por libertad.</p>
+
+            <p>Y ojo, no significa que trabajar esté mal. Todos empezamos ahí. Pero quedarse ahí toda la vida es como conformarse con ser pasajero cuando podrías conducir tu propio vehículo.</p>
+
+            <p>El que construye se pregunta:</p>
+            <ul>
+              <li>¿Qué necesidad puedo resolver para miles de personas?</li>
+              <li>¿Qué producto puedo crear que se venda una y otra vez sin depender de mí?</li>
+              <li>¿Qué sistema puedo diseñar que escale, que crezca aunque yo no esté?</li>
+            </ul>
+
+            <h2>Consumidores vs. Creadores</h2>
+            <p>El gran cambio de mentalidad ocurre cuando pasas de ser consumidor a ser creador.</p>
+            <ul>
+              <li>El consumidor paga por entretenimiento; el creador diseña plataformas de entretenimiento.</li>
+              <li>El consumidor gasta en productos; el creador fabrica marcas.</li>
+              <li>El consumidor se queja de la inflación; el creador sabe cómo beneficiarse de ella.</li>
+            </ul>
+
+            <p>El consumidor busca placer inmediato. El creador construye activos que le darán placer a largo plazo.</p>
+            <p>El primero trabaja para cumplir sueños ajenos. El segundo crea para cumplir los suyos.</p>
+
+            <h2>El sacrificio inicial</h2>
+            <p>Y no nos engañemos: construir un sistema propio no es fácil ni rápido. Significa trabajar más duro que nunca al inicio, asumir riesgos, equivocarse, fracasar, levantarse y seguir. Significa decirle no a la comodidad de un sueldo seguro, y sí a la incertidumbre de un camino que solo pocos se atreven a recorrer.</p>
+
+            <p>Pero esa incomodidad es temporal. Es como sembrar una semilla: al principio parece que no pasa nada, pero con el tiempo se convierte en un árbol que da frutos sin que tengas que estar regándolo todos los días.</p>
+
+            <p>El empleo es como comprar fruta en el mercado: comes hoy, pero mañana debes volver a pagar. Construir un sistema es plantar tu propio árbol: lo trabajas fuerte al inicio, pero después disfrutas de los frutos por años.</p>
+
+            <h2>¿Vale la pena arriesgarse?</h2>
+            <p>Aquí está la pregunta clave. ¿Vale la pena renunciar a la supuesta seguridad de un sueldo estable por la incertidumbre de construir algo propio?</p>
+
+            <p>La respuesta es: depende de lo que quieras para tu vida. Si lo único que buscas es sobrevivir, la vía del empleo es suficiente. Pero si quieres libertad, control, tiempo y abundancia, entonces sí, vale absolutamente la pena.</p>
+
+            <p>Piénsalo así:</p>
+            <ul>
+              <li>Mientras unos esperan jubilarse a los 65 para viajar, otros ya están viajando en sus 30 o 40.</li>
+              <li>Mientras unos dependen de un jefe para tomar vacaciones, otros deciden su propia agenda.</li>
+              <li>Mientras unos trabajan toda la vida para pagar deudas, otros usan sus sistemas para generar activos.</li>
+            </ul>
+
+            <p>El riesgo no está en intentarlo, el riesgo real está en quedarse toda la vida en el mismo lugar.</p>
+
+            <h2>La pregunta final</h2>
+            <p>No se trata de preguntarte “¿cuánto quiero ganar?” porque el dinero por sí solo no es la meta. La pregunta real es:</p>
+
+            <p><strong>“¿Qué estoy construyendo hoy que seguirá generando valor mañana, incluso cuando yo no esté trabajando?”</strong></p>
+
+            <p>Ahí es donde está la diferencia. Quien construye sistemas, negocios y activos, compra libertad. Quien solo cambia tiempo por dinero, vende su vida a plazos.</p>
+
+            <p>Y al final, todos estamos en una carretera: algunos en la acera, atrapados en la rutina del consumo; otros en la vía lenta, esperando décadas para ver resultados; y unos pocos se atreven a acelerar y crear su propio camino.</p>
+
+            <p><strong>La elección es tuya.</strong></p>
+          </section>
+        </div>
+
+        <div class="full paddding_left_15">
+          <a class="main_bt" href="#">  Volver a inicio ></a>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="col-md-6">
+        <div class="full text_align_right_img">
+          <img src="images/uno.png" alt="Vision de riqueza" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact_form -->
+    <!-- end section -->
+    <!-- Start Footer -->
+    <footer class="footer-box">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12 white_fonts">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                    
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <h3>Enlaces rápidos</h3>
+                            </div>
+                            <div class="full">
+                       <ul>
+
+                        <li><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li><a class="nav-link" href="Vision.html">Vision</a></li>
+                        <li><a class="nav-link" href="Inversion.html">Inversion</a></li>
+                        <li><a class="nav-link" href="Consejos.html">Consejos</a></li>
+                        <li><a class="nav-link" href="ideas.html">Ideas</a></li>
+                        <li><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        
+                    </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                             <h3>Sugerencias</h3>
+                             <p>"Creado para quienes buscan crecer sin perder su esencia."</p>
+                             <div class="newsletter_form">
+                                <form action="index.html">
+                                   <input type="email" placeholder="Email" name="#" required="">
+                                   <button>Enviar</button>
+                                </form>
+                             </div>
+                         </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                             <h3>Contactos</h3>
+                             <ul class="full">
+                               <li><img src="images/i5.png"><span>Global Inspiration Hub<br>Código Millonario, Worldwide</span></li>
+                               <li><img src="images/i6.png"><span>codigomillonarioblog@gmail.com</span></li>
+                               
+                             </ul>
+                         </div>
+                            </div>
+                        </div>
+					</div>
+                </div>
+			 </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="crp">© Código Millonario 2025 · Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script>
+    <script src="js/slider-index.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/custom.js"></script>
+	<script>
+	/* counter js */
+
+(function ($) {
+	$.fn.countTo = function (options) {
+		options = options || {};
+		
+		return $(this).each(function () {
+			// set options for current element
+			var settings = $.extend({}, $.fn.countTo.defaults, {
+				from:            $(this).data('from'),
+				to:              $(this).data('to'),
+				speed:           $(this).data('speed'),
+				refreshInterval: $(this).data('refresh-interval'),
+				decimals:        $(this).data('decimals')
+			}, options);
+			
+			// how many times to update the value, and how much to increment the value on each update
+			var loops = Math.ceil(settings.speed / settings.refreshInterval),
+				increment = (settings.to - settings.from) / loops;
+			
+			// references & variables that will change with each update
+			var self = this,
+				$self = $(this),
+				loopCount = 0,
+				value = settings.from,
+				data = $self.data('countTo') || {};
+			
+			$self.data('countTo', data);
+			
+			// if an existing interval can be found, clear it first
+			if (data.interval) {
+				clearInterval(data.interval);
+			}
+			data.interval = setInterval(updateTimer, settings.refreshInterval);
+			
+			// initialize the element with the starting value
+			render(value);
+			
+			function updateTimer() {
+				value += increment;
+				loopCount++;
+				
+				render(value);
+				
+				if (typeof(settings.onUpdate) == 'function') {
+					settings.onUpdate.call(self, value);
+				}
+				
+				if (loopCount >= loops) {
+					// remove the interval
+					$self.removeData('countTo');
+					clearInterval(data.interval);
+					value = settings.to;
+					
+					if (typeof(settings.onComplete) == 'function') {
+						settings.onComplete.call(self, value);
+					}
+				}
+			}
+			
+			function render(value) {
+				var formattedValue = settings.formatter.call(self, value, settings);
+				$self.html(formattedValue);
+			}
+		});
+	};
+	
+	$.fn.countTo.defaults = {
+		from: 0,               // the number the element should start at
+		to: 0,                 // the number the element should end at
+		speed: 1000,           // how long it should take to count between the target numbers
+		refreshInterval: 100,  // how often the element should be updated
+		decimals: 0,           // the number of decimal places to show
+		formatter: formatter,  // handler for formatting the value before rendering
+		onUpdate: null,        // callback method for every time the element is updated
+		onComplete: null       // callback method for when the element finishes updating
+	};
+	
+	function formatter(value, settings) {
+		return value.toFixed(settings.decimals);
+	}
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+	formatter: function (value, options) {
+	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+	}
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+	var $this = $(this);
+	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+	$this.countTo(options);
+  }
+});
+	</script>
+</body>
+
+</html>
+
+
