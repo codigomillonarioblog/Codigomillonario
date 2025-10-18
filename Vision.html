@@ -252,6 +252,21 @@ body {
 
 
 
+
+
+@media (max-width: 768px) {
+  .section-black .content-box {
+    text-align: justify !important;
+  }
+  .section-black .content-box p,
+  .section-black .content-box ul,
+  .section-black .content-box li {
+    text-align: justify !important;
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -282,7 +297,8 @@ body {
         <li class="nav-item"><a class="nav-link" href="vision.html">Visión</a></li>
         <li class="nav-item"><a class="nav-link" href="inversion.html">Inversión</a></li>
         <li class="nav-item"><a class="nav-link" href="consejos.html">Consejos</a></li>
-        <li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobremi.html">Sobre mi</a></li>
+         <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
       </ul>
     </div>
@@ -427,129 +443,179 @@ body {
 
 
 
-
-
 <!-- ================= SECCIÓN ================= -->
 <style>
-/* Eliminar rayas automáticas de la plantilla */
-h1::before, h1::after, h2::before, h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
 
-/* Forzar que heading_main apile verticalmente y centre */
-.heading_main {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  float: none !important;
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
 }
 
-/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
-.heading_main h2,
-.heading_main h1 {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  margin: 0.4rem 0 !important;
-  color: inherit !important;
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
 }
 
-/* Línea naranja única y centrada */
-.heading_main .orange-line {
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-right-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
   width: 80px;
   height: 3px;
   background-color: orange;
-  margin: 8px auto !important;
-  display: block !important;
+  margin: 10px auto;
+  display: block;
 }
 
-/* Evitar flotados inesperados de la plantilla */
-.heading_main * {
-  float: none !important;
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — bajada */
+.section-black .text_align_right_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px; /* 👈 aquí bajamos la imagen */
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_right_img img {
+    margin-top: 30px; /* 👈 menos espacio en móvil */
+  }
 }
 </style>
 
-
-
-
-
-<!-- section -->
-<div class="section layout_padding Vision_bg">
+<div class="section-black">
   <div class="container">
     <div class="row">
 
-      <!-- COLUMNA TEXTO (IZQUIERDA) -->
-      <div class="col-md-6">
-        <div class="full paddding_left_15">
+      <!-- COLUMNA TEXTO IZQUIERDA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
 
-          <!-- ENCABEZADO CENTRADO -->
-          <div class="heading_main">
-            <!-- Subtítulo -->
-            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
-              Un Camino Diferente
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+              Libertad Financiera: Cómo Construir Sistemas que Generen Valor Real
             </h2>
-
-            <!-- Línea naranja -->
-            <div class="orange-line" aria-hidden="true"></div>
-
-            <!-- Título -->
-            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
-               Cómo tomar decisiones fuera de lo común para alcanzar éxito y libertad financiera
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+             Ingresos Pasivos, Mentalidad Estratégica y Control de tu Tiempo
             </h1>
-          </div>
-        </div>
+          </header>
 
-        <!-- TEXTO -->
-        <div class="full paddding_left_15">
-          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+          <!-- CONTENIDO -->
 
-<p>
-  La libertad financiera no es un destino mágico al que se llega por azar, es una construcción consciente que nace de decisiones inteligentes tomadas cada día. No se trata únicamente de ganar más dinero, sino de aprender a multiplicarlo, protegerlo y ponerlo a trabajar a nuestro favor. La diferencia entre quienes permanecen atrapados en la rutina y quienes alcanzan independencia radica en la mentalidad con la que enfrentan la vida: unos se conforman con esperar, otros deciden crear.
-</p>
 
-<p>
-  Este despertar comienza al comprender que el tiempo es nuestro recurso más valioso y que desperdiciarlo en un camino lento y lleno de promesas vacías es renunciar a la posibilidad de vivir con plenitud. La verdadera riqueza surge cuando dejamos de intercambiar horas por un salario limitado y comenzamos a construir activos, sistemas y oportunidades que crecen con nosotros y nos permiten escalar sin depender exclusivamente de nuestro esfuerzo personal.
-</p>
 
-<p>
-  Nuestro propósito es inspirar a quienes leen estas palabras a tomar el control de sus finanzas, a cuestionar lo establecido y a dar pasos firmes hacia una vida abundante y con propósito. No se trata de fórmulas mágicas, sino de visión, disciplina y acción estratégica. Quien comprende esto, despierta; y quien despierta, transforma su vida para siempre.
-</p>
+          <section>
+  <p>Deja de romantizar la mediocridad. No viniste a este mundo a sobrevivir como un robot programado para repetir rutinas que no te llevan a ninguna parte. Si sigues atado a un sueldo que apenas cubre tus necesidades básicas, no estás viviendo: estás alquilando tu tiempo al precio más barato posible. Y mientras tú te convences de que “es lo normal”, hay personas que ya están construyendo imperios digitales, automatizando ingresos y asegurando un futuro donde no tienen que pedir permiso para vivir.</p>
 
-<p>
-  Muchos pasan la vida entera trabajando sin detenerse a pensar si el camino en el que están los llevará realmente a la vida que desean. Corren de un lado a otro, llenos de responsabilidades, deudas y preocupaciones, mientras el tiempo se les escapa. Viven esperando que algún día “las cosas mejoren”, sin darse cuenta de que ese día nunca llega por sí solo.
-</p>
+  <p>El sistema está diseñado para que obedezcas: estudias, trabajas, consumes, te endeudas y agradeces por migajas. Te venden la idea de que tener un empleo estable es éxito, cuando en realidad es una cárcel elegante. Es una jaula de oro que brilla, pero que te quita la libertad de decidir. No se trata de tener más dinero, se trata de tener poder: el poder de elegir cómo vives tu vida, con quién, cuándo y desde dónde.</p>
 
-<p>
-  El verdadero cambio comienza cuando alguien se atreve a despertar. Despertar significa cuestionar lo que siempre se nos dijo: que había que estudiar, conseguir un trabajo estable, ahorrar poco a poco y esperar décadas para disfrutar de una pensión incierta. Despertar es mirar más allá de lo común y entender que existen otros caminos, más rápidos, más inteligentes y, sobre todo, más alineados con una vida de propósito.
-</p>
+  <h2>La esclavitud moderna tiene traje y horario fijo</h2>
+  <p>La mayoría no se da cuenta, pero la esclavitud de hoy no lleva cadenas físicas: lleva facturas, hipotecas, horarios y miedos. Te programaron para sentirte culpable si no “trabajas duro” para alguien más, pero nunca te enseñaron a trabajar duro para ti. Eso no es estabilidad, es sumisión maquillada.</p>
 
-<p>
-  La riqueza no es solo acumular dinero. La riqueza es tener la libertad de elegir cómo vivir, de dedicar tiempo a lo que importa, de construir un futuro que no dependa únicamente de nuestro esfuerzo diario. Y para llegar ahí, no se necesita suerte, se necesita visión, educación y acción.
-</p>
+  <p>El tiempo es tu activo más valioso y también el más desperdiciado. La gente vende sus mejores años a cambio de un salario que no crece al ritmo de sus sueños. Y lo peor es que lo aceptan como si fuera la única opción. Si sigues atando tu ingreso a tu tiempo, vivirás en modo supervivencia por siempre.</p>
 
-<p>
-  Quien despierta descubre que el dinero no debe ser el fin, sino la herramienta. Que la clave no está en trabajar más duro, sino en crear soluciones, en resolver problemas, en construir proyectos que generen valor real a los demás. Porque cuando creamos valor, la abundancia llega como consecuencia natural.
-</p>
+  <h2>La brutal diferencia entre sobrevivir y dominar</h2>
+  <p>El que sobrevive se conforma con pagar cuentas. El que domina construye sistemas que multiplican su tiempo. El que sobrevive ve los días pasar. El que domina diseña estrategias para que su dinero trabaje incluso cuando él no lo hace. Esto no es fantasía: es estrategia, mentalidad y ejecución real.</p>
 
-<p>
-  Pero despertar también implica valentía. Significa aceptar que habrá errores, que el miedo aparecerá y que no todos entenderán el camino que decides tomar. Sin embargo, quienes se mantienen firmes, quienes aprenden y perseveran, son los que logran alcanzar esa independencia que parecía imposible.
-</p>
+  <p>La libertad financiera no se trata de “hacerse rico rápido”, se trata de no tener que rogarle a nadie por tiempo libre. Se trata de tener opciones, de decidir sin miedo. Y esa libertad no se compra: se construye con visión, disciplina y coraje. Los que ganan no esperan oportunidades… las crean.</p>
 
-<p>
-  El futuro pertenece a quienes dejan de soñar pasivamente y comienzan a diseñarlo activamente. Cada paso, por pequeño que sea, acerca a una vida más libre, más consciente y más plena. El momento perfecto no existe; lo único que existe es la decisión de empezar ahora.
-</p>
+  <h2>Creador o espectador: tú decides</h2>
+  <p>Hay dos tipos de personas: los que miran y los que hacen. Los que miran critican, se quejan, dudan y posponen. Los que hacen entienden que si no construyen su propio sistema, terminarán trabajando toda su vida para alimentar el de alguien más. Los consumidores viven a la defensiva. Los creadores atacan con estrategia.</p>
 
-          </section>
+  <ul>
+    <li>El consumidor paga por experiencias. El creador construye plataformas que las venden.</li>
+    <li>El consumidor teme la inflación. El creador la convierte en oportunidad.</li>
+    <li>El consumidor busca motivación. El creador tiene visión y acción.</li>
+  </ul>
+
+  <p>Y aquí no hay medias tintas: o eres tú el que toma el control, o alguien más lo hará por ti. El que no diseña su propio plan, termina ejecutando el de otro. Así de simple.</p>
+
+  <h2>El precio de la libertad es alto, pero la esclavitud es más cara</h2>
+  <p>Construir tu propio sistema no es un juego suave. Vas a fallar, vas a sangrar, vas a sentir miedo. Pero eso es parte del precio de entrada a una vida sin cadenas. El que quiere resultados reales entiende que la comodidad es un lujo que se gana, no que se pide.</p>
+
+  <p>La diferencia entre el que habla y el que actúa es que uno se queja del sistema y el otro lo hackea. No esperes un milagro, no existe. Lo que existe es la brutal determinación de crear un sistema que funcione incluso cuando tú no estés.</p>
+
+  <h2>Palabras clave que no puedes ignorar</h2>
+  <p>Si realmente quieres romper el ciclo, tienes que grabarte esto: libertad financiera, ingresos pasivos, sistema digital, independencia económica, mentalidad de abundancia, estrategia real, control de tiempo y poder personal. No son frases vacías, son herramientas. Y el que no las usa, termina esclavo de quien sí lo hace.</p>
+
+  <p>El mundo no espera a los lentos. Los que dudan demasiado se quedan viendo cómo otros avanzan. El camino no es fácil, pero la recompensa es brutal: libertad. Y no hablo de una libertad poética, hablo de una libertad real, medible, que se siente en tu bolsillo, en tu agenda y en tu vida.</p>
+
+  <h2>La última decisión</h2>
+  <p>Nadie va a venir a salvarte. No hay un jefe que te libere, ni un gobierno que te dé poder. O decides construir, o aceptas obedecer. No hay punto medio. Lo que hoy estás ignorando será lo que mañana te cueste caro. Construir tu sistema no es opcional si quieres libertad, es obligatorio.</p>
+
+  <p><strong>La pregunta no es si puedes hacerlo… la pregunta es: ¿cuánto más vas a esperar para empezar?</strong></p>
+</section>
+
+         
+
+
+
+         
         </div>
       </div>
 
-      <!-- COLUMNA IMAGEN (DERECHA) -->
+      <!-- COLUMNA IMAGEN DERECHA -->
       <div class="col-md-6">
         <div class="full text_align_right_img">
-          <img alt="Vision de riqueza" src="images/img33.png" style="max-width:100%; height:auto;"/>
+          <img src="images/uno.png" alt="Visión de riqueza">
         </div>
       </div>
 
@@ -563,101 +629,193 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
+
            
 
 
 
-<!-- End Banner -->
-<!-- section -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <!-- Columna Imagen -->
-            <div class="col-md-6">
-                <div class="full text_align_right_img">
-                    <img src="images/cmb.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
-                </div>
-            </div>
-
-            <!-- Columna Texto -->
-            <div class="col-md-6 layout_padding">
-                <div class="full paddding_left_15">
-                    <div class="heading_main text_align_left">
-
+<!-- ================= SECCIÓN ================= -->
 <style>
-/* Esto elimina cualquier raya que venga por defecto */
-h1::before, 
-h1::after, 
-h2::before, 
-h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
+
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-right-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — bajada */
+.section-black .text_align_right_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px; /* 👈 imagen más abajo */
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_right_img img {
+    margin-top: 30px; /* 👈 menos espacio en móvil */
+  }
+}
 </style>
 
-<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+<div class="section-black">
+  <div class="container">
+    <div class="row">
 
-    <!-- Subtítulo -->
-    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
-        Cómo aprovechar la tecnología, la inversión y los negocios digitales para crecer
-    </h2>
-
-    <!-- ÚNICA línea naranja -->
-    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
-
-    <!-- Título principal -->
-    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
-        2025 - El Año de las Oportunidades Financieras
-    </h1>
-
-</div>
-
-
-
-
-                    </div>
-                </div>
-                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
-                    
-
-
-
- <p>
-            Todo despertar requiere un momento de decisión. Un punto de quiebre en el que dejamos de justificar la inercia y empezamos a caminar hacia la vida que realmente queremos. Ese momento no llega con la suerte, ni con la espera pasiva, sino con la valentía de asumir responsabilidad plena sobre lo que somos y lo que aspiramos a ser.
-          </p>
-
-        <p>
-            El conocimiento, por sí solo, es estéril si no se convierte en acción. Las estrategias, las herramientas y las ideas más brillantes carecen de poder si permanecen en teoría. Lo que marca la diferencia entre quienes transforman su vida y quienes permanecen atrapados en la rutina es la capacidad de actuar con determinación, incluso en medio de la incertidumbre.
-          </p>
-
-      <p>
-            Este llamado no es una invitación superficial ni un recurso motivacional vacío: es un recordatorio de que el tiempo no se repite, de que cada día perdido es una oportunidad que no regresa. Es una exhortación a tomar el control de los recursos más valiosos que posees —tu mente, tu tiempo y tu energía— y dirigirlos hacia la construcción de un futuro que no dependa de terceros, sino de tu propia visión.
-          </p>
-
-        <p>
-            La libertad, en cualquier forma, no se concede: se conquista. Y se conquista cuando dejas de caminar en la vía lenta, cuando te atreves a romper con la comodidad de lo “aceptable” y eliges el camino de la creación, de la innovación y del progreso acelerado. No es un recorrido sencillo, pero es el único que garantiza que tu vida no quede reducida a sobrevivir en lugar de vivir plenamente.
-          </p>
-
-    <p>
-            Hoy, más que nunca, la invitación es clara: deja atrás la espera, rompe con la rutina y abraza el despertar de tu potencial. No esperes condiciones perfectas, porque no existen. No postergues tus decisiones, porque el tiempo no hace pausas. Empieza ahora, con lo que tienes, desde donde estás. Tu vida puede transformarse en la medida en que tú decidas transformarla.
-          </p>
- <p>
-            Este es el llamado. La decisión, en última instancia, es únicamente tuya.
-          </p>
-
-</div>
-        <div class="full paddding_left_15">
-          <a class="main_bt" href="#">Volver a Inicio &gt;</a>
+      <!-- COLUMNA IMAGEN IZQUIERDA -->
+      <div class="col-md-6">
+        <div class="full text_align_right_img">
+          <img src="images/cmb.png" alt="Oportunidades 2025">
         </div>
       </div>
 
+      <!-- COLUMNA TEXTO DERECHA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
 
-                </div>
-            </div>
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+             “Libertad financiera y crecimiento personal: Deja de vender tu tiempo”
+            </h2>
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+              “Cómo construir sistemas, activos y negocios que generen ingresos reales”
+            </h1>
+          </header>
+
+          <!-- CONTENIDO -->
+
+
+
+          <section>
+  <p>Todo despertar requiere un momento de decisión. Un punto de quiebre donde decides dejar de ser un espectador y empezar a jugar en serio. La vida no espera a los indecisos, y el tiempo perdido nunca regresa. La realidad es brutal: nadie te va a regalar oportunidades, nadie te va a dar la fórmula del éxito en bandeja. La única forma de cambiar tu situación es tomando acción ahora, con determinación absoluta.</p>
+
+  <p>El conocimiento sin acción es inútil. Tener ideas brillantes no te hace rico. Tener títulos o diplomas no garantiza libertad financiera ni control sobre tu tiempo. Lo que separa a los que transforman su vida de los que solo sobreviven es la capacidad de ejecutar, de convertir pensamiento en resultados tangibles, de multiplicar tu esfuerzo a través de sistemas y estrategias.</p>
+
+  <h2>La verdad incómoda sobre el trabajo tradicional</h2>
+  <p>El empleo estable es una ilusión. Es cómodo, seguro y brillante… hasta que desaparece. Dependiendo de un solo ingreso estás construyendo tu vida sobre arena movediza. Despidos, recortes, inflación y crisis económicas son hechos, no teorías. La seguridad laboral es un mito, y quien confía ciegamente en un sueldo está hipotecando su libertad y su futuro.</p>
+
+  <p>El poder real no está en trabajar más horas, sino en crear activos y sistemas que generen dinero aunque no estés presente. Negocios digitales, marcas personales, inversiones inteligentes, productos escalables: eso es lo que separa al que sobrevive del que prospera. Mientras otros gastan tiempo y energía siguiendo órdenes, tú puedes construir un imperio que trabaje para ti.</p>
+
+  <h2>De consumidor a creador imparable</h2>
+  <p>La mentalidad de creador es la única que importa. El consumidor compra entretenimiento; el creador diseña plataformas de entretenimiento. El consumidor paga por productos; el creador fabrica marcas que generan ingresos continuos. El consumidor se queja de la inflación; el creador la usa como oportunidad para invertir, multiplicar y escalar su patrimonio.</p>
+
+  <p>Si todavía te conformas con cambiar horas por dinero, estás aceptando límites artificiales. Si quieres libertad financiera, control sobre tu tiempo y la capacidad de decidir tu vida, necesitas pasar a otro nivel: crear activos, escalar sistemas y generar ingresos pasivos que crezcan mientras tú disfrutas la vida.</p>
+
+  <h2>El sacrificio brutal que pocos soportan</h2>
+  <p>No voy a endulzarlo: construir un sistema propio es incómodo, difícil y muchas veces aterrador. Vas a equivocarte, vas a fracasar y vas a sentir miedo. Pero eso es lo que separa a los mediocres de los audaces. Cada hora invertida en crecer, aprender y construir hoy, se traduce en libertad, dinero y control mañana.</p>
+
+  <p>El sacrificio inicial es temporal. El resultado es permanente. Mientras otros siguen comprando horas de su vida a cambio de un sueldo, tú puedes crear negocios, inversiones y productos que generen valor incluso cuando duermes. Ese es el verdadero poder: diseñar tu vida para que funcione sin depender de tu esfuerzo constante.</p>
+
+  <h2>Acción masiva y decisiones estratégicas</h2>
+  <p>El mundo no recompensa la intención ni la teoría. Premia resultados. Premia impacto. Premia acción masiva, consistente y estratégica. Cada día que no actúas es un día en el que alguien más construye la vida que tú quieres. La pregunta no es “¿cuánto quiero ganar?”, la pregunta es “¿qué estoy haciendo hoy para que mis sistemas, negocios y activos generen valor mañana, aunque yo no esté presente?”</p>
+
+  <p>Invertir en ti mismo, en habilidades digitales, en marketing, en creación de contenido y en sistemas automáticos no es opcional si quieres dejar de ser uno más del montón. Es la única manera de multiplicar tu tiempo, tu dinero y tu influencia. Mientras otros gastan su energía en excusas, tú puedes construir libertad.</p>
+
+  <h2>La brutal competencia: quién gana y quién se queda atrás</h2>
+  <p>El mundo no espera por los indecisos. Cada minuto que pierdes es ventaja para alguien más. Mientras unos sueñan con independencia financiera, otros están tomando acción, construyendo activos, generando ingresos pasivos, diseñando su estilo de vida y escalando su libertad.</p>
+
+  <p>No hay espacio para la mediocridad. La diferencia entre éxito y fracaso no es suerte ni talento; es mentalidad, disciplina y ejecución. Si no estás dispuesto a hacer lo que pocos hacen, no esperes resultados extraordinarios.</p>
+
+  <h2>El camino del creador</h2>
+  <ul>
+    <li>Crea productos y servicios que se vendan solos y de forma recurrente.</li>
+    <li>Diseña sistemas que funcionen sin que estés presente, automatizando procesos clave.</li>
+    <li>Invierte con inteligencia: bienes raíces, negocios digitales, acciones, criptomonedas y proyectos escalables.</li>
+    <li>Construye tu marca personal y tu autoridad en tu nicho para atraer oportunidades de forma natural.</li>
+    <li>Aprende constantemente, aplica rápido y corrige sobre la marcha.</li>
+  </ul>
+
+  <p>Quien domina estas estrategias no depende de jefes, horarios ni sueldos limitados. Domina su tiempo, su dinero y su destino.</p>
+
+  <h2>Empieza ahora: no hay excusas</h2>
+  <p>Si esperas a “el momento adecuado” o a “tener todo perfecto”, perderás. Nunca habrá un momento perfecto. La acción inmediata, el riesgo calculado y la constancia brutal son lo que crean riqueza real y libertad verdadera.</p>
+
+  <p><strong>Este es tu llamado a la acción: deja de ser un espectador, rompe la mediocridad, toma decisiones estratégicas y construye activos, sistemas y negocios que funcionen sin que tengas que intercambiar tiempo por dinero. La elección es tuya. Pero recuerda: el tiempo no espera.</strong></p>
+</section>
+
+
+          <a class="main_bt" href="#">Volver a inicio ></a>
         </div>
-    </div>
-</div>
+      </div>
 
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
 
 
 

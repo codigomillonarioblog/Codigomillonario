@@ -281,6 +281,10 @@
 
 
 
+
+
+
+
 @media (max-width: 768px) {
   .section-black .content-box {
     text-align: justify !important;
@@ -554,15 +558,18 @@ h1::before, h1::after, h2::before, h2::after {
     width: 60px;
   }
 }
-</style>
 
+
+
+
+</style>
 <div class="section layout_padding">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="full">
           <div class="heading_main text_align_center">
-            <h2>Contacto</h2>
+            <h2>Tienda</h2>
             <div class="orange-line"></div>
           </div>
         </div>
@@ -573,63 +580,155 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
-<!-- contact_form -->
-<style>
-/* Estilo del botón de Enviar */
-.contact_form_inner button {
-  background-color: #ffffff !important; /* Blanco */
-  color: #000000 !important; /* Texto negro */
-  border: 2px solid #ffffff !important;
-  padding: 8px 20px !important; /* 🔸 Más pequeño */
-  font-size: 15px !important;
-  font-weight: bold !important;
-  border-radius: 6px !important; /* 🔸 Bordes cuadrados */
-  cursor: pointer !important;
-  display: block !important;
-  margin: 0 auto !important; /* Centrado */
-  text-align: center !important;
-  transition: all 0.3s ease !important;
-}
 
-/* Efecto al pasar el mouse */
-.contact_form_inner button:hover {
-  background-color: transparent !important;
-  color: #ffffff !important;
-  border: 2px solid #ffffff !important;
-}
-</style>
 
-<div class="section contact_form">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-sm-12 offset-lg-3">
-        <div class="full">
-          <form class="contact_form_inner" action="#">
-            <fieldset>
-              <div class="field">
-                <input type="text" name="name" placeholder="Tu nombre" />
-              </div>
-              <div class="field">
-                <input type="email" name="email" placeholder="Correo electrónico" />
-              </div>
-              <div class="field">
-                <input type="text" name="phone_no" placeholder="Número de teléfono" />
-              </div>
-              <div class="field">
-                <textarea placeholder="Escribe tu mensaje aquí"></textarea>
-              </div>
-              <div class="field center">
-                <button>Enviar</button>
-              </div>
-            </fieldset>
-          </form>
+
+
+<!-- Sección Tienda - Estilo Shopify Mejorada -->
+<section id="tienda" class="wrapper style2 special" style="background:#0a0a0a; padding:4em 0;">
+  <style>
+    /* ✨ Animación de sacudida rápida con pausa */
+    @keyframes fastShake {
+      0%, 100% { transform: translateX(0); }
+
+      /* 3 sacudidas rápidas */
+      5%  { transform: translateX(-10px); }
+      10% { transform: translateX(10px); }
+      15% { transform: translateX(-10px); }
+      20% { transform: translateX(10px); }
+      25% { transform: translateX(-10px); }
+      30% { transform: translateX(0); }
+
+      /* Pausa */
+      60% { transform: translateX(0); }
+    }
+
+    .shake-button {
+      animation: fastShake 1.5s infinite; /* ⚡ rápido y con pausa */
+      display: inline-block;
+    }
+
+    .shake-button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Tarjetas con efecto profesional */
+    .card {
+      background:#111;
+      border-radius:20px;
+      box-shadow:0 0 15px rgba(255,215,0,0.1);
+      overflow:hidden;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow:0 0 25px rgba(255,215,0,0.3);
+    }
+
+    .card img {
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .card-content {
+      padding:1.5em;
+    }
+
+    .card-content h3 {
+      color:#fff;
+      font-size:1.4em;
+      margin-bottom:0.5em;
+    }
+
+    .card-content p {
+      color:#ccc;
+      margin-bottom:0.5em;
+    }
+
+    .price {
+      color:#ffd700;
+      font-size:1.2em;
+      font-weight:bold;
+      margin-bottom:1em;
+    }
+
+    .button.primary {
+      background:#ffd700;
+      color:#000;
+      border:none;
+      font-weight:bold;
+      padding:0.8em 1.2em;
+      border-radius:10px;
+      display:inline-block;
+      text-decoration:none;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2em;
+      margin-top:2em;
+    }
+  </style>
+
+  <div class="inner">
+    <header class="major">
+      <h2 style="color:#fff; font-size:2.2em;">Tienda Código Millonario -MUY PRONTO-</h2>
+      <p style="color:#aaa; font-size:1.1em;">Invierte en tu mente y construye tu libertad financiera. Productos digitales 100% descargables.</p>
+    </header>
+
+    <div class="grid">
+
+      <!-- PRODUCTO 1 -->
+      <div class="card">
+        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
+        <div class="card-content">
+          <h3>Guía Millonaria 2025</h3>
+          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
+          <p class="price">$19.000 COP</p>
+          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
         </div>
       </div>
+
+
+      <!-- PRODUCTO 1 -->
+      <div class="card">
+        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
+        <div class="card-content">
+          <h3>Guía Millonaria 2025</h3>
+          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
+          <p class="price">$19.000 COP</p>
+          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 1 -->
+      <div class="card">
+        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
+        <div class="card-content">
+          <h3>Guía Millonaria 2025</h3>
+          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
+          <p class="price">$19.000 COP</p>
+          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 -->
+      <div class="card">
+        <img src="images/curso-menteydinero.jpg" alt="Curso Mente y Dinero">
+        <div class="card-content">
+          <h3>Curso Rápido: Mente y Dinero</h3>
+          <p>Cambia tu mentalidad hacia la riqueza con este curso práctico sobre enfoque, acción y prosperidad.</p>
+          <p class="price">$24.000 COP</p>
+          <a href="https://tuusuario.gumroad.com/l/menteydinero" target="_blank" class="button primary shake-button">Acceder ahora</a>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-
-
+</section>
 
 
 
