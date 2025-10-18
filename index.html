@@ -1460,6 +1460,34 @@ jQuery(function ($) {
   }
 });
 	</script>
+
+
+
+
+
+
+
+<script>
+// Seleccionamos todos los enlaces del menú
+const menuLinks = document.querySelectorAll('.navbar .nav-link');
+
+// Obtenemos la página actual
+const currentPage = window.location.pathname.split("/").pop();
+
+// Recorremos cada enlace del menú
+menuLinks.forEach(link => {
+  // Obtenemos el href del enlace
+  const linkPage = link.getAttribute('href');
+
+  // Si coincide con la página actual, agregamos la clase 'active'
+  if (linkPage === currentPage) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 
 </html>

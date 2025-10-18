@@ -849,5 +849,32 @@ h1::before, h1::after, h2::before, h2::after {
 <script src="js/isotope.min.js"></script>
 <script src="js/images-loded.min.js"></script>
 <script src="js/custom.js"></script>
+
+
+
+
+
+
+<script>
+// Seleccionamos todos los enlaces del menú
+const menuLinks = document.querySelectorAll('.navbar .nav-link');
+
+// Obtenemos la página actual
+const currentPage = window.location.pathname.split("/").pop();
+
+// Recorremos cada enlace del menú
+menuLinks.forEach(link => {
+  // Obtenemos el href del enlace
+  const linkPage = link.getAttribute('href');
+
+  // Si coincide con la página actual, agregamos la clase 'active'
+  if (linkPage === currentPage) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
