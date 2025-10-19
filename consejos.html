@@ -235,48 +235,86 @@
 
 
 
+
+
+
+
+@media (max-width: 768px) {
+  .section-black .content-box {
+    text-align: justify !important;
+  }
+  .section-black .content-box p,
+  .section-black .content-box ul,
+  .section-black .content-box li {
+    text-align: justify !important;
+  }
+}
+
+
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/logo.png" alt="Código Millonario">
-      </a>
+ 
+  
 
-      <button class="navbar-toggler" type="button" id="menu-toggle">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
 
-<ul class="navbar-nav justify-content-end" id="navbarNav">
-  <li class="nav-item">
-    <a class="nav-link active" href="/">Inicio</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/vision.html">Visión</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/inversion.html">Inversión</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/consejos.html">Consejos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/ideas.html">Ideas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/contacto.html">Contacto</a>
-  </li>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Código Millonario">
+    </a>
+
+    <!-- Agregamos los atributos de Bootstrap para que controle el menú -->
+    <button class="navbar-toggler" type="button" id="menu-toggle"
+      data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+     <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/index.html">Inicio</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/vision.html">Visión</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/inversion.html">Inversión</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/consejos.html">Consejos</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/sobremi.html">Sobre mi</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/tienda.html">Tienda</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/contacto.html">Contacto</a></li>
 </ul>
-        </ul>
-      </div>
+
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- SCRIPT HAMBURGUESA -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarNav = document.getElementById('navbarNav');
+
+  // Cierra el menú automáticamente al hacer clic en un enlace
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      // Usa la API de Bootstrap para cerrar correctamente sin conflictos
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarNav) || new bootstrap.Collapse(navbarNav);
+      bsCollapse.hide();
+    });
+  });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+
 
 
   <!-- Scripts -->
@@ -429,147 +467,210 @@ background-color: #000;
 
 
 
-
-<!-- End Banner -->
-<!-- section -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <!-- Columna Imagen -->
-            <div class="col-md-6">
-                <div class="full text_align_right_img">
-                    <img src="images/cmh.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
-                </div>
-            </div>
-
-            <!-- Columna Texto -->
-            <div class="col-md-6 layout_padding">
-                <div class="full paddding_left_15">
-                    <div class="heading_main text_align_left">
-
+<!-- ================= SECCIÓN ================= -->
 <style>
-/* Esto elimina cualquier raya que venga por defecto */
-h1::before, 
-h1::after, 
-h2::before, 
-h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
+
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-right-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — bajada */
+.section-black .text_align_left_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_left_img img {
+    margin-top: 30px;
+  }
+}
 </style>
 
-<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+<div class="section-black">
+  <div class="container">
+    <div class="row">
 
-    <!-- Subtítulo -->
-    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
-           Ideas Diferentes que Cambian el Chip Financiero
-    </h2>
+      <!-- COLUMNA IMAGEN IZQUIERDA -->
+      <div class="col-md-6">
+        <div class="full text_align_left_img">
+          <img src="images/cmh.png" alt="Ideas financieras">
+        </div>
+      </div>
 
-    <!-- ÚNICA línea naranja -->
-    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+      <!-- COLUMNA TEXTO DERECHA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
 
-    <!-- Título principal -->
-    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
-        Estrategias prácticas para principiantes que buscan invertir con confianza
-    </h1>
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+             “De Observador a Creador: Cómo Transformar Hábitos, Capital y Decisiones en Poder Real”
+            </h2>
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+              Cómo Pensar, Actuar y Multiplicar tu Capital sin Limites
+            </h1>
+          </header>
 
-</div>
-
-
-
-
-                    </div>
-                </div>
-                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
-                    
- 
+          <!-- CONTENIDO -->
 
 
 
-    <p>
-           
-            Muchas veces, lo que separa a quienes transforman sus finanzas de quienes permanecen en el mismo ciclo, 
-            no es la falta de oportunidades, sino la manera de ver las cosas. Cambiar la mentalidad implica adoptar 
-            perspectivas nuevas, cuestionar lo establecido y atreverse a pensar distinto.
-          </p>
 
-         
-    <p>
-            <b>1. Hazte preguntas incómodas</b><br>
-            En lugar de leer consejos genéricos, comienza a cuestionarte seriamente: 
-            ¿qué pasaría si sigo haciendo lo mismo durante los próximos diez años?, 
-            ¿qué cosas estoy tolerando que me impiden crecer?, 
-            ¿mi dinero está trabajando más que yo o soy yo quien lo esclaviza? 
-            Estas preguntas abren la mente mucho más que frases bonitas.
-          </p>
+          <section>
+  <p>Si realmente quieres diferenciarte del montón, olvida las excusas y los consejos genéricos: la transformación financiera comienza en tu cabeza, en la brutal honestidad con la que enfrentas tu realidad y en la capacidad de tomar decisiones que incomoden a quienes viven en la mediocridad. No hay magia ni atajos, solo estrategia, visión y acción despiadada.</p>
+
+  <hr>
+
+  <h3>1. Hazte preguntas que nadie quiere hacerse</h3>
+  <p>No busques respuestas cómodas. Pregúntate con brutal sinceridad:  
+  ¿cuánto tiempo más voy a desperdiciar repitiendo errores ajenos?,  
+  ¿qué hábitos mantengo por miedo a cambiar?,  
+  ¿estoy construyendo activos que trabajen mientras duermo o sigo esclavo de mi agenda?  
+  La honestidad radical es el primer paso que separa a un CEO de un empleado promedio.</p>
+
+  <hr>
+
+  <h3>2. Estudia a los creadores invisibles</h3>
+  <p>Deja de idolatrar celebridades globales. Observa a quienes empezaron con cero, sin recursos y sin permisos, y ahora dominan mercados locales. Aprende de los que construyeron sistemas, negocios y marcas sin esperar a que otros les den luz verde. Esa visión de “CEO de la vida real” es la que transforma ideas en capital real.</p>
+
+  <hr>
+
+  <h3>3. Convierte cada gasto en palanca</h3>
+  <p>No hay dinero desperdiciado, solo oportunidades desaprovechadas.  
+  ¿Pagas un gimnasio? Documenta tu progreso, crea una comunidad y monetízala.  
+  ¿Compras equipos o gadgets? Aprende, crea contenido o productos digitales.  
+  Cada inversión personal puede convertirse en un activo escalable si dejas de ser consumidor y piensas como CEO.</p>
+
+  <hr>
+
+  <h3>4. Mejora implacable del 1%</h3>
+  <p>No subestimes el efecto acumulativo de mejorar un 1% diario: hábitos, conocimiento, ingresos, relaciones estratégicas. Al final del año, tendrás ventaja competitiva que la mayoría ni siquiera soñó alcanzar. El éxito financiero se construye con consistencia brutal, no con entusiasmo esporádico.</p>
+
+  <hr>
+
+  <h3>5. Mentalidad de inversionista, no de empleado</h3>
+  <p>Antes de evaluar cualquier actividad, pregúntate: ¿qué produce mientras yo no estoy?,  
+  ¿qué sistemas puedo crear para que esto escale sin depender de mí?  
+  Un CEO sabe que cambiar tiempo por dinero es la forma más lenta y peligrosa de sobrevivir. Crear activos es la única estrategia que genera libertad real.</p>
+
+  <hr>
+
+  <h3>6. El poder letal del “No”</h3>
+  <p>Decir NO es más poderoso que decir SÍ. NO a distracciones, NO a compromisos mediocres, NO a tareas que no construyen tu futuro. Aprender a priorizar es aprender a proteger tu capital más valioso: tiempo, energía y oportunidades estratégicas.</p>
+
+  <hr>
+
+  <h3>7. Ideas locas, resultados descomunales</h3>
+  <p>Los grandes CEOs y emprendedores se construyen con ideas que otros descartan como imposibles: desde negocios digitales disruptivos hasta productos que parecen absurdos al inicio. El riesgo está en no actuar, no en probar. La audacia genera resultados que el miedo nunca dará.</p>
+
+  <hr>
+
+  <h3>8. Observa lo invisible y actúa primero</h3>
+  <p>El éxito real se esconde donde nadie mira: tendencias emergentes, necesidades ignoradas, problemas que todos aceptan como normales. Mientras otros siguen fórmulas trilladas, tú puedes detectar oportunidades antes de que sean obvias, y construir sistemas que trabajen mientras el resto sigue reaccionando.</p>
+
+  <hr>
+
+  <h3>9. Acción despiadada con inteligencia</h3>
+  <p>La visión sin ejecución es solo fantasía. La ejecución sin estrategia es desperdicio. Combina ambos con disciplina y obtendrás resultados que la mayoría considera suerte. La diferencia entre un CEO exitoso y alguien que solo sueña con libertad financiera está en la intensidad de su acción y la claridad de su enfoque.</p>
+
+  <hr>
+
+  <h3>Conclusión brutal</h3>
+  <p>Si estás dispuesto a dejar de lado la comodidad, a cuestionarlo todo y a ejecutar con audacia, entonces estás listo para un nivel que la mayoría nunca alcanzará. Cada decisión inteligente, cada hábito construido y cada activo creado es un ladrillo en el imperio que estás llamado a construir.  
+  <strong>Deja de esperar que otros te den permiso: actúa, invierte en ti, y construye tu camino hacia la libertad financiera real.</strong></p>
+</section>
+
+
+
+
+
 
           
-    <p>
-            <b>2. Imita modelos ocultos, no famosos</b><br>
-            En vez de enfocarte únicamente en grandes referentes globales como Elon Musk o Jeff Bezos, 
-            observa a esos emprendedores locales que con pocos recursos construyeron cadenas de negocios 
-            o empresas sólidas. La inspiración más valiosa está en quienes empezaron con lo mismo que tú tienes hoy.
-          </p>
-
-         
-    <p>
-            <b>3. Convierte gastos en ingresos</b><br>
-            Casi cualquier gasto puede transformarse en una oportunidad si lo ves con otros ojos. 
-            Si pagas gimnasio, podrías documentar tu progreso en un blog o canal. 
-            Si compras ropa, podrías revender o crear reseñas. 
-            Incluso tus hobbies pueden convertirse en comunidades rentables si los compartes de manera estratégica.
-          </p>
-
-         
-    <p>
-            <b>4. La regla del 1%</b><br>
-            No es necesario transformar tu vida de un día para otro. 
-            Si mejoras tan solo un 1% diario en hábitos, ahorro o habilidades, 
-            en un año habrás generado un cambio monumental. 
-            La riqueza se construye a partir de mejoras pequeñas pero constantes.
-          </p>
-
-         
-    <p>
-            <b>5. Piensa como inversionista, no como trabajador</b><br>
-            Antes de preguntarte cuánto ganas con una actividad, pregúntate qué te deja 
-            incluso cuando dejes de trabajar en ella. 
-            La clave está en crear activos que liberen tu tiempo en lugar de atarte más.
-          </p>
-
-        
-    <p>
-            <b>6. El poder del “No”</b><br>
-            La gente verdaderamente exitosa entiende que decir NO a compromisos, distracciones 
-            o tareas que no suman es tan importante como decir SÍ a las que aportan valor. 
-            Aprender a priorizar es una habilidad financiera y de vida.
-          </p>
-
-         
-    <p>
-            <b>7. Ideas locas valen oro</b><br>
-            Muchas grandes fortunas comenzaron con ideas que parecían absurdas: vender agua embotellada, 
-            subir videos jugando videojuegos o alquilar habitaciones en casas de desconocidos. 
-            Las ideas más inusuales suelen ser las más rentables porque pocos se atreven a llevarlas a cabo.
-          </p>
-
-      
-    <p>
-            <b>"El Poder de Ver lo Invisible"</b><br>
-            El verdadero cambio financiero no proviene de acumular frases motivacionales, 
-            sino de modificar la forma en la que percibes tu entorno. 
-            La próxima gran oportunidad puede no estar en los libros de los gurús, 
-            sino en la capacidad que tengas de observar lo que otros ignoran.
-          </p>
-
-
-
-
-                </div>
-            </div>
         </div>
+      </div>
+
     </div>
+  </div>
 </div>
+<!-- ================= FIN DE SECCIÓN ================= -->
 
 
 
@@ -586,187 +687,184 @@ h2::after {
 
 <!-- ================= SECCIÓN ================= -->
 <style>
-/* Eliminar rayas automáticas de la plantilla */
-h1::before, h1::after, h2::before, h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
 
-/* Forzar que heading_main apile verticalmente y centre */
-.heading_main {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  float: none !important;
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
 }
 
-/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
-.heading_main h2,
-.heading_main h1 {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  margin: 0.4rem 0 !important;
-  color: inherit !important;
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
 }
 
-/* Línea naranja única y centrada */
-.heading_main .orange-line {
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-left-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
   width: 80px;
   height: 3px;
   background-color: orange;
-  margin: 8px auto !important;
-  display: block !important;
+  margin: 10px auto;
+  display: block;
 }
 
-/* Evitar flotados inesperados de la plantilla */
-.heading_main * {
-  float: none !important;
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — margen superior */
+.section-black .text_align_right_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-left-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_right_img img {
+    margin-top: 30px;
+  }
 }
 </style>
 
-<!-- section -->
-<div class="section layout_padding Vision_bg">
+<div class="section-black">
   <div class="container">
     <div class="row">
 
-      <!-- COLUMNA TEXTO (IZQUIERDA) -->
-      <div class="col-md-6">
-        <div class="full paddding_left_15">
+      <!-- COLUMNA TEXTO IZQUIERDA -->
+      <div class="col-md-6 layout_padding text-left-col">
+        <div class="content-box">
 
-          <!-- ENCABEZADO CENTRADO -->
-          <div class="heading_main">
-            <!-- Subtítulo -->
-            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
-             Cómo Prevenir Errores al Invertir desde el Inicio
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+              “Hábitos, decisiones y estrategias financieras que separan a los ganadores del resto”
             </h2>
-
-            <!-- Línea naranja -->
-            <div class="orange-line" aria-hidden="true"></div>
-
-            <!-- Título -->
-            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
-               Estrategias prácticas para principiantes que buscan invertir con confianza
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+             Rompe Cadenas: Cómo Salir del Ciclo del Salario
             </h1>
-          </div>
-        </div>
+          </header>
 
-        <!-- TEXTO -->
-        <div class="full paddding_left_15">
-          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
-
-<p>
-  
-
-            Cuando una persona comienza a interesarse en el mundo de las inversiones, suele enfrentarse a una mezcla de entusiasmo y ansiedad. 
-            Esa energía inicial puede ser positiva, pero también peligrosa si no se canaliza de la manera correcta. La impaciencia por ver resultados inmediatos, 
-            la tendencia a seguir modas financieras o el impulso de lanzarse a la primera oportunidad que parece rentable, pueden llevar a cometer errores que, 
-            en lugar de acercar a la libertad financiera, terminan generando frustración y estancamiento.
-          </p>
-
-         <p>
-            El camino hacia unas finanzas sólidas no se trata de suerte ni de movimientos impulsivos, sino de estrategia, disciplina y visión a largo plazo. 
-            A continuación, se presentan algunos de los errores más frecuentes que los inversionistas principiantes suelen cometer y, lo más importante, cómo evitarlos desde el principio.
-          </p>
-
-          <hr/>
-
-          <h3>1. Creer que invertir es lo mismo que ahorrar</h3>
-          <p>
-            El ahorro es una práctica fundamental, pero no debe confundirse con la inversión. Ahorrar protege tu capital, sin embargo, no lo multiplica. 
-            Mantener dinero en una cuenta bancaria sin una estrategia clara únicamente hace que pierda valor con el tiempo debido a la inflación.
-          </p>
-
-         <p>
-            La inversión implica poner tu dinero a trabajar para generar rendimientos. Más allá de guardar sin rumbo, es clave destinar una parte de tus ahorros a activos capaces de generar ingresos recurrentes o de apreciarse con el tiempo.
-          </p>
-
-          <hr/>
-
-          <h3>2. Depender de una sola fuente de ingresos</h3>
-          <p>
-            Uno de los errores más graves es creer que el salario o los ingresos de un único negocio serán suficientes para sostener la vida financiera a largo plazo. 
-            Cuando dependes de una sola fuente, vives en una situación de fragilidad: basta un imprevisto, una crisis económica o un cambio en el mercado laboral para que toda tu estabilidad se vea comprometida.
-          </p>
-
-          <p>
-            La solución está en construir múltiples fuentes de ingreso, ya sea a través de inversiones financieras, negocios digitales, activos inmobiliarios o creación de propiedad intelectual. 
-            La diversificación no es un lujo, es una estrategia de supervivencia.
-          </p>
-
-          <hr/>
-
-          <h3>3. Buscar atajos y dinero rápido</h3>
-         <p>
-            El deseo de enriquecerse en poco tiempo ha llevado a muchos a caer en fraudes, estafas y promesas de “inversiones milagrosas”. 
-            Esta mentalidad de inmediatez es una de las principales razones por las que tantos pierden dinero.
-          </p>
-
-         <p>
-            La regla fundamental es sencilla: si algo suena demasiado bueno para ser verdad, probablemente lo sea. 
-            En lugar de apostar por supuestas fórmulas mágicas, lo recomendable es enfocarse en construir sistemas, proyectos y activos que puedan escalar con el tiempo.
-          </p>
-
-          <hr/>
-
-          <h3>4. Pensar como consumidor en lugar de como productor</h3>
-         <p>
-            Los consumidores concentran sus recursos en pasivos: lujos, gadgets y deudas innecesarias. 
-            Los productores, en cambio, utilizan su dinero para invertir en la creación de activos: negocios, innovación o propiedad intelectual.
-          </p>
-
-          <p>
-            Cada vez que realices un gasto, pregúntate si este te acerca a construir riqueza o si únicamente está drenando tus ingresos. 
-            Este hábito mental marca la diferencia entre quienes construyen patrimonio y quienes simplemente lo consumen.
-          </p>
-
-          <hr/>
-
-          <h3>5. No invertir en uno mismo primero</h3>
-          <p>
-            Muchos buscan multiplicar su dinero sin haberse preparado antes. Pretender invertir sin conocimientos es como querer cosechar sin haber sembrado. 
-            La base de toda inversión exitosa es la educación financiera, el desarrollo de nuevas habilidades y la formación personal.
-          </p>
-
-          <p>
-            Invertir en uno mismo significa adquirir conocimientos, aprender a gestionar riesgos y desarrollar competencias que permitan tomar mejores decisiones. 
-            Ninguna inversión externa será realmente exitosa si no está respaldada por un inversionista que entiende lo que está haciendo.
-          </p>
-
-          <hr/>
-
-          <h3>Cómo aplicar estas lecciones desde hoy</h3>
-          <ul style="text-align: justify;">
-            <li>Separa un capital destinado únicamente a inversión, aunque sea un pequeño porcentaje de tus ingresos.</li>
-            <li>Empieza con un vehículo sencillo: un activo financiero accesible, una inversión digital o un curso que luego se convierta en producto.</li>
-            <li>Piensa en escalabilidad: prioriza lo que puede crecer con el tiempo sin requerir un aumento proporcional de esfuerzo.</li>
-            <li>Evalúa y ajusta constantemente: cada resultado, positivo o negativo, es una lección que te acerca a tu objetivo.</li>
-          </ul>
-
-          <hr/>
-
-          <h3>Conclusión</h3>
-          <p>
-            Invertir no es un evento aislado, sino un proceso continuo que requiere paciencia, disciplina y visión a largo plazo. 
-            La verdadera libertad financiera no surge de atajos ni de supuestas fórmulas rápidas, sino de evitar los errores que tantos han cometido antes y de tomar decisiones inteligentes de manera consistente.
-          </p>
-
-          <p>
-            Quien comprende esto y actúa con estrategia desde el inicio no solo protege su dinero, sino que construye un camino sólido hacia la independencia y la abundancia.
-          </p>
+          <!-- CONTENIDO -->
 
 
 
-          </section>
+          <section>
+    <p>Si sigues esperando que la fortuna toque tu puerta, déjame decirte algo: no va a pasar. La riqueza, la libertad y la influencia no se heredan, se construyen con decisiones inteligentes y acción implacable. Cada día que desperdicias dudando es un día que alguien más está tomando lo que tú podrías tener.</p>
+
+    <p>El primer paso para dejar de ser uno más es aceptar la realidad: tu tiempo es el recurso más valioso y nadie te lo devolverá. Mientras otros gastan horas en redes sociales, tú puedes estar creando activos, aprendiendo habilidades que multiplicarán tu valor y construyendo tu futuro con cada decisión consciente.</p>
+
+    <hr>
+
+    <h3>1. Deja de glorificar la comodidad</h3>
+    <p>La mayoría de las personas buscan seguridad, pero seguridad es una mentira disfrazada de rutina. Mientras ellos duermen tranquilos con un sueldo mensual, tú debes aprender a tolerar la incomodidad: es allí donde se forjan los CEOs y los líderes que controlan su destino financiero.</p>
+
+    <hr>
+
+    <h3>2. Multiplica tu tiempo, no solo tu dinero</h3>
+    <p>No sirve de nada tener mucho dinero si cada dólar está atado a tus horas de trabajo. Los verdaderos inversionistas y emprendedores crean sistemas y activos que generan resultados sin su presencia constante. Aprende a construir procesos, automatizar y delegar, porque tu tiempo es tu ventaja competitiva más grande.</p>
+
+    <hr>
+
+    <h3>3. Invierte en información y habilidades</h3>
+    <p>El conocimiento aplicado vale más que cualquier capital. Antes de poner dinero en cualquier inversión, invierte en ti: domina ventas, marketing, negocios digitales, finanzas y habilidades que te permitan detectar oportunidades donde otros solo ven problemas.</p>
+
+    <hr>
+
+    <h3>4. Rompe la mentalidad de víctima</h3>
+    <p>Dejar que la economía, el jefe o la suerte dicten tu vida es un lujo que no puedes permitirte. La verdadera libertad financiera comienza cuando asumes la responsabilidad total de tus resultados, sin excusas, sin culpas y sin esperar a que alguien te ayude.</p>
+
+    <hr>
+
+    <h3>5. Crea múltiples fuentes de ingresos</h3>
+    <p>No dependas de un solo flujo. Cada ingreso adicional que construyes es una capa de seguridad y una palanca para escalar tu riqueza. Negocios digitales, inversiones en activos escalables, contenido que genere ingresos pasivos: todo cuenta.</p>
+
+    <hr>
+
+    <h3>6. Toma riesgos calculados</h3>
+    <p>La comodidad no genera fortuna. El riesgo es inevitable, pero inteligente. Analiza, planifica y actúa con audacia: quienes se quedan quietos por miedo, pierden tiempo y oportunidades. Quien actúa con estrategia, gana ventaja sobre todos los demás.</p>
+
+    <hr>
+
+    <h3>Cómo empezar hoy</h3>
+    <ul>
+        <li>Identifica tu primer activo: algo que puedas construir y escalar sin depender de tu tiempo.</li>
+        <li>Aprende habilidades que te den ventaja competitiva inmediata.</li>
+        <li>Automatiza y delega desde el primer día, no después.</li>
+        <li>Monitorea resultados, ajusta y sigue escalando con disciplina.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Conclusión directa</h3>
+    <p>No hay excusas. Cada segundo que pospones es un paso atrás. Si quieres libertad financiera, influencia y control sobre tu vida, empieza ahora. Construye activos, fortalece tu mente, expande tus habilidades y actúa con estrategia. Nadie te va a dar nada, pero tú puedes crearlo todo.</p>
+</section>
+
+          
+
+          <a class="main_bt" href="#">Volver a inicio ></a>
         </div>
       </div>
 
-      <!-- COLUMNA IMAGEN (DERECHA) -->
+      <!-- COLUMNA IMAGEN DERECHA -->
       <div class="col-md-6">
         <div class="full text_align_right_img">
-          <img alt="Vision de riqueza" src="images/cmg.png" style="max-width:100%; height:auto;"/>
+          <img src="images/cmg.png" alt="Visión de riqueza">
         </div>
       </div>
 
@@ -774,6 +872,7 @@ h1::before, h1::after, h2::before, h2::after {
   </div>
 </div>
 <!-- ================= FIN DE SECCIÓN ================= -->
+
 
 
 
@@ -887,5 +986,12 @@ h1::before, h1::after, h2::before, h2::after {
 <script src="js/isotope.min.js"></script>
 <script src="js/images-loded.min.js"></script>
 <script src="js/custom.js"></script>
+
+
+
+
+
+
+
 </body>
 </html>

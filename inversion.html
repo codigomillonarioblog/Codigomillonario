@@ -251,48 +251,82 @@ body {
 
 
 
+
+@media (max-width: 768px) {
+  .section-black .content-box {
+    text-align: justify !important;
+  }
+  .section-black .content-box p,
+  .section-black .content-box ul,
+  .section-black .content-box li {
+    text-align: justify !important;
+  }
+}
+
+
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/logo.png" alt="Código Millonario">
-      </a>
+ 
+  
 
-      <button class="navbar-toggler" type="button" id="menu-toggle">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
 
-<ul class="navbar-nav justify-content-end" id="navbarNav">
-  <li class="nav-item">
-    <a class="nav-link active" href="/">Inicio</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/vision.html">Visión</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/inversion.html">Inversión</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/consejos.html">Consejos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/ideas.html">Ideas</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/contacto.html">Contacto</a>
-  </li>
+  
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="Código Millonario">
+    </a>
+
+    <!-- Agregamos los atributos de Bootstrap para que controle el menú -->
+    <button class="navbar-toggler" type="button" id="menu-toggle"
+      data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+  <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/index.html">Inicio</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/vision.html">Visión</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/inversion.html">Inversión</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/consejos.html">Consejos</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/sobremi.html">Sobre mi</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/tienda.html">Tienda</a></li>
+  <li class="nav-item"><a class="nav-link" href="/codigomillonario/contacto.html">Contacto</a></li>
 </ul>
-        </ul>
-      </div>
+
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- SCRIPT HAMBURGUESA -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarNav = document.getElementById('navbarNav');
+
+  // Cierra el menú automáticamente al hacer clic en un enlace
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      // Usa la API de Bootstrap para cerrar correctamente sin conflictos
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarNav) || new bootstrap.Collapse(navbarNav);
+      bsCollapse.hide();
+    });
+  });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
 
 
   <!-- Scripts -->
@@ -406,197 +440,161 @@ body {
 
 
 
+
 <!-- ================= SECCIÓN ================= -->
 <style>
-/* Eliminar rayas automáticas de la plantilla */
-h1::before, h1::after, h2::before, h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
 
-/* Forzar que heading_main apile verticalmente y centre */
-.heading_main {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  float: none !important;
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
 }
 
-/* Asegurar que h2 y h1 se comporten como bloques y centren su texto */
-.heading_main h2,
-.heading_main h1 {
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  margin: 0.4rem 0 !important;
-  color: inherit !important;
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
 }
 
-/* Línea naranja única y centrada */
-.heading_main .orange-line {
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-right-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
   width: 80px;
   height: 3px;
   background-color: orange;
-  margin: 8px auto !important;
-  display: block !important;
+  margin: 10px auto;
+  display: block;
 }
 
-/* Evitar flotados inesperados de la plantilla */
-.heading_main * {
-  float: none !important;
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — bajada */
+.section-black .text_align_right_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px; /* 👈 aquí bajamos la imagen */
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_right_img img {
+    margin-top: 30px; /* 👈 menos espacio en móvil */
+  }
 }
 </style>
 
-<!-- section -->
-<div class="section layout_padding Vision_bg">
+<div class="section-black">
   <div class="container">
     <div class="row">
 
-      <!-- COLUMNA TEXTO (IZQUIERDA) -->
-      <div class="col-md-6">
-        <div class="full paddding_left_15">
+      <!-- COLUMNA TEXTO IZQUIERDA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
 
-          <!-- ENCABEZADO CENTRADO -->
-          <div class="heading_main">
-            <!-- Subtítulo -->
-            <h2 style="font-size:18px; font-weight:normal; font-family:Arial, sans-serif; color:#444; line-height:1.4;">
-    Construye Activos que Trabajen por Ti
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+            Inversión Inteligente: Haz Crecer tu Dinero y tu Libertad Financiera
             </h2>
-
-            <!-- Línea naranja -->
-            <div class="orange-line" aria-hidden="true"></div>
-
-            <!-- Título -->
-            <h1 style="font-size:22px; font-weight:bold; font-family:Arial, sans-serif; line-height:1.3;">
-               Aprende a generar ingresos pasivos e independencia financiera a largo plazo
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+             Estrategias Reales para Multiplicar Activos y Generar Ingresos Pasivos
             </h1>
-          </div>
-        </div>
+          </header>
 
-        <!-- TEXTO -->
-        <div class="full paddding_left_15">
-          <section style="max-width:900px; margin:auto; padding:40px; font-family:'Georgia', serif; line-height:1.8; text-align:justify;">
+          <!-- CONTENIDO -->
+          
 
-<p>
-  
-            Invertir va mucho más allá de ahorrar o guardar dinero esperando que algún día crezca por arte de magia. 
-            La inversión real empieza cuando aprendes a multiplicar tu tiempo y tu dinero a través de activos y sistemas 
-            que funcionan incluso cuando no estás presente. Esa es la diferencia entre trabajar toda la vida por dinero… 
-            o hacer que el dinero trabaje para ti.
-          </p>
+          <section>
+  <h2>Inversión inteligente: Haz que tu dinero trabaje por ti</h2>
 
-         <p>
-            El error más común es creer que invertir es algo lejano, exclusivo para millonarios o para personas con suerte. 
-            La verdad es que cualquier persona, desde cero, puede comenzar a crear activos que generen ingresos. 
-            No se trata de magia, sino de estrategia y disciplina.
-          </p>
+  <p>Invertir no es cuestión de suerte ni de esperar milagros. Es una habilidad que combina visión, estrategia y acción constante. Cada decisión que tomas hoy puede multiplicar tus recursos mañana, o hundirlos si actúas sin plan.</p>
 
-          <hr/>
+  <h3>Por qué invertir es esencial</h3>
+  <p>Muchos piensan que ahorrar es suficiente. No lo es. Guardar dinero en el banco solo protege tu capital del gasto inmediato, pero no lo hace crecer. La verdadera riqueza se construye cuando tu dinero empieza a generar más dinero, de forma constante y escalable.</p>
 
-       <p>
-            La mayoría de personas sigue un camino tradicional: estudian, consiguen un empleo, trabajan 8 a 12 horas al día 
-            y esperan subir poco a poco. El problema es que este sistema tiene un techo invisible:
-          </p>
+  <h3>Tipos de inversión que no puedes ignorar</h3>
+  <ul>
+    <li><strong>Mercado financiero:</strong> Acciones, ETFs y bonos. Aprende a identificar oportunidades que te den rendimientos reales a largo plazo.</li>
+    <li><strong>Bienes raíces:</strong> No solo propiedades físicas: los activos digitales, terrenos virtuales y franquicias también generan ingresos pasivos.</li>
+    <li><strong>Negocios propios:</strong> Emprender con visión y sistemas que trabajen sin tu presencia es una inversión de tiempo y dinero que puede multiplicar tus ganancias.</li>
+    <li><strong>Educación y habilidades:</strong> Cada curso, certificación o experiencia que te haga más valioso es un activo que nunca se deprecia.</li>
+  </ul>
 
-            <li>Tus ingresos dependen del tiempo que trabajas.</li>
-            <li>Si te enfermas o dejas de trabajar, dejas de ganar.</li>
-            <li>Siempre estás intercambiando horas de vida por dinero.</li>
-          </ul>
-<p>
-            ¿El resultado? La vida se convierte en una carrera interminable donde nunca hay libertad real. 
-            Por eso, la inversión no puede ser entendida solo como “ahorrar en un banco”. 
-            Es construir puentes hacia una vida en la que no dependas únicamente de tu esfuerzo físico o mental diario.
-          </p>
+  <h3>Errores que matan tus inversiones</h3>
+  <p>No subestimes el riesgo de actuar por impulso. Evita seguir tendencias sin entendimiento, invertir en lo que no conoces o dejar que el miedo te paralice. La inversión sin estrategia es especulación disfrazada.</p>
 
-          <hr/>
+  <h3>Tu mentalidad como capital</h3>
+  <p>La mejor inversión siempre empieza en ti. La disciplina, la paciencia y la capacidad de aprender rápido son activos invisibles que determinan el éxito de cualquier movimiento financiero. Mientras otros esperan consejos o fórmulas mágicas, tú debes actuar con inteligencia y rapidez.</p>
 
-          <h3>Activos escalables: la clave del crecimiento</h3>
-         <p>
-            Un activo escalable es algo que puedes crear una sola vez y que sigue generando ingresos en el futuro, 
-            sin que tengas que empezar desde cero cada día. Algunos ejemplos:
-          </p>
+  <p>En esta sección de <strong>Inversión</strong>, aprenderás a ver el dinero como una herramienta, a analizar riesgos con precisión y a construir un portafolio que crezca contigo, incluso cuando no estés trabajando directamente por él.</p>
 
-          <ul style="text-align: justify;">
-            <li><b>Negocios digitales:</b> un blog, un canal de YouTube, una app, una tienda online.</li>
-            <li><b>Propiedad intelectual:</b> un libro digital, un curso, un software.</li>
-            <li><b>Sistemas automatizados:</b> herramientas que venden, cobran o entregan valor sin tu presencia.</li>
-          </ul>
-
-         <p>
-            Invertir en este tipo de activos es lo que permite a alguien transformar unos pocos años de trabajo intenso 
-            en décadas de libertad.
-          </p>
-
-          <hr/>
-
-          <h3>Vehículos financieros para multiplicar tu dinero</h3>
-        <p> 
-            Además de los activos escalables, existen vehículos financieros que sirven para poner a trabajar tu capital. 
-            Aquí es donde el dinero se convierte en tu empleado:
-          </p>
-
-          <ul style="text-align: justify;">
-            <li><b>Mercados bursátiles y ETFs:</b> accesibles hoy desde aplicaciones sencillas.</li>
-            <li><b>Bienes raíces:</b> propiedades que generan renta mensual o se valorizan.</li>
-            <li><b>Crowdfunding e inversiones colectivas:</b> entrar a proyectos grandes con pequeñas cantidades.</li>
-            <li><b>Criptomonedas y activos digitales:</b> de alto riesgo, pero con posibilidades de altos retornos.</li>
-          </ul>
-
-         <p>
-            Lo importante no es invertir en todo, sino entender qué vehículo se ajusta a tus objetivos, 
-            tu conocimiento y tu tolerancia al riesgo.
-          </p>
-
-          <hr/>
-
-          <h3>Invertir en ti mismo: la inversión más rentable</h3>
-          <p>
-            Antes de multiplicar el dinero en el mercado, necesitas multiplicar tus habilidades. 
-            Si aprendes a programar, vender, diseñar, liderar o comunicar, esas habilidades pueden usarse para crear activos.
-          </p>
-
-         <p>
-            Cada curso, libro o mentoría que aproveches es un activo invisible que aumenta tu valor en el mercado. 
-            Tu mentalidad también es clave: aprender a ver oportunidades donde otros solo ven problemas es lo que convierte 
-            un simple proyecto en una fuente de ingresos a largo plazo.
-          </p>
-
-          <p style="text-align: justify;">
-            La mayoría quiere invertir en “algo externo”, pero se olvida de que el primer y más poderoso activo es uno mismo.
-          </p>
-
-          <hr/>
-
-          <h3>Conclusión: invierte en construir libertad</h3>
-        <p>
-  Invertir no significa esperar rendimientos mágicos ni correr detrás de modas pasajeras. 
-            Significa tomar decisiones conscientes que te acerquen a una vida con libertad de tiempo, lugar y dinero. 
-            Significa entender que:
-          </p>
-
-          <ul style="text-align: justify;">
-            <li>El salario paga las cuentas, pero los activos construyen la riqueza.</li>
-            <li>El ahorro protege, pero la inversión expande.</li>
-            <li>El conocimiento es el primer capital que nadie puede robarte.</li>
-          </ul>
-
-         <p>
-            Hoy más que nunca, las oportunidades están al alcance de cualquiera con internet y visión. 
-            No necesitas ser millonario para empezar a invertir, pero necesitas empezar a invertir si algún día quieres ser libre.
-          </p>
+  <p><strong>No se trata de esperar a que la riqueza llegue sola. Se trata de crearla, protegerla y multiplicarla con estrategia y determinación.</strong></p>
+</section>
 
 
-
-          </section>
+          
         </div>
       </div>
 
-      <!-- COLUMNA IMAGEN (DERECHA) -->
+      <!-- COLUMNA IMAGEN DERECHA -->
       <div class="col-md-6">
         <div class="full text_align_right_img">
-          <img alt="Vision de riqueza" src="images/cme.png" style="max-width:100%; height:auto;"/>
+          <img src="images/uno.png" alt="Visión de riqueza">
         </div>
       </div>
 
@@ -609,267 +607,433 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
-<!-- End Banner -->
-<!-- section -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <!-- Columna Imagen -->
-            <div class="col-md-6">
-                <div class="full text_align_right_img">
-                    <img src="images/cmc.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
-                </div>
-            </div>
 
-            <!-- Columna Texto -->
-            <div class="col-md-6 layout_padding">
-                <div class="full paddding_left_15">
-                    <div class="heading_main text_align_left">
 
+
+
+
+
+
+<!-- ================= SECCIÓN ================= -->
 <style>
-/* Esto elimina cualquier raya que venga por defecto */
-h1::before, 
-h1::after, 
-h2::before, 
-h2::after {
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
-</style>
 
-<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
 
-    <!-- Subtítulo -->
-    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
-        El Verdadero Inicio de tu Camino
-    </h2>
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
+}
 
-    <!-- ÚNICA línea naranja -->
-    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
 
-    <!-- Título principal -->
-    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
-       Primeros pasos para construir riqueza, libertad y un futuro con propósito
-    </h1>
+.section-black p {
+  margin-bottom: 16px;
+}
 
-</div>
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
 
+.section-black .text-right-col {
+  text-align: left;
+}
 
+/* Línea decorativa naranja */
+.section-black .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 10px auto;
+  display: block;
+}
 
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
 
-                    </div>
-                </div>
-                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
-                    
- <p>Muchas personas creen que la inversión comienza el día que abren una cuenta en un banco, compran acciones o adquieren un bien raíz. En realidad, la inversión comienza mucho antes: empieza en tu mentalidad, en la claridad de tu visión y en las decisiones que tomas todos los días.</p>
-    <p>No importa si hoy tienes poco capital o si apenas estás aprendiendo. Lo que determina tu futuro no es cuánto tienes en este momento, sino qué estás dispuesto a construir a partir de ahora.</p>
-    <p>La mayoría sigue un camino tradicional, confiando en que con el tiempo llegará la recompensa: trabajar duro, ahorrar lo que se pueda, esperar que las oportunidades aparezcan por sí solas. Pero ese camino está lleno de incertidumbre y, en la práctica, casi nunca lleva a la libertad. ¿Por qué? Porque el tiempo y el esfuerzo humano tienen un límite. Y si tu ingreso depende solo de tu tiempo, siempre estarás atado.</p>
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
 
-    <hr>
+/* Imagen — bajada */
+.section-black .text_align_left_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px;
+}
 
-    <h3>La diferencia entre quien avanza y quien se queda atrás</h3>
-    <p>La diferencia real está en cómo usas tu energía y tus recursos.</p>
-    <p>Algunos los gastan únicamente en sobrevivir: pagan deudas, cubren gastos, y si sobra algo, lo guardan “por si acaso”.</p>
-    <p>Otros deciden transformar esos mismos recursos en palancas de crecimiento: educación, habilidades, negocios, activos que pueden escalar.</p>
-    <p>Esa decisión marca un antes y un después. Uno vive apagando incendios. El otro, construyendo un futuro sólido.</p>
-
-    <hr>
-
-    <h3>El juego de los activos: sembrar hoy para cosechar mañana</h3>
-    <p>Piensa en cada proyecto, idea o inversión como una semilla. Una semilla parece pequeña, insignificante, incluso débil. Pero con el tiempo, puede convertirse en un árbol capaz de dar sombra, frutos y multiplicarse.</p>
-    <p>Invertir en un activo —ya sea un blog, un negocio digital, una propiedad, un sistema que automatice ingresos— es sembrar una semilla que seguirá dando frutos en el futuro. La diferencia es que mientras más semillas plantes y más las cuides, más rápido llegarás a una cosecha abundante.</p>
-    <p>Ese es el secreto de quienes logran independencia: no dependen de una sola semilla, sino de un jardín entero de activos trabajando en paralelo.</p>
-
-    <hr>
-
-    <h3>El verdadero riesgo no es invertir, es no hacerlo</h3>
-    <p>Muchos tienen miedo de invertir porque piensan: “¿y si pierdo?”. Pero el verdadero peligro está en quedarse quieto.</p>
-    <ul>
-        <li>Si no inviertes, el tiempo seguirá pasando y nada cambiará.</li>
-        <li>Si no arriesgas, nunca sabrás lo que podrías haber logrado.</li>
-        <li>Si no te mueves hoy, dentro de diez años seguirás en el mismo lugar, pero con menos energía y menos oportunidades.</li>
-    </ul>
-    <p>El riesgo de la inacción es mucho más costoso que cualquier error que puedas cometer aprendiendo. Porque al menos, al equivocarte, te llevas experiencia y aprendizaje.</p>
-
-    <hr>
-
-    <h3>Tu primera y más grande inversión: tú mismo</h3>
-    <p>Antes de multiplicar dinero, multiplica tu valor. Invertir en ti —en tu mente, tus conocimientos, tus habilidades— es lo que te dará la capacidad de ver y aprovechar oportunidades que otros pasan por alto.</p>
-    <ul>
-        <li><strong>Aprende a vender:</strong> porque todo en la vida es venta, incluso tus ideas.</li>
-        <li><strong>Aprende a crear:</strong> porque lo que construyes puede escalar más allá de ti.</li>
-        <li><strong>Aprende a invertir:</strong> porque el dinero, cuando se guía con inteligencia, se convierte en tu mejor empleado.</li>
-    </ul>
-    <p>Recuerda: la herramienta más poderosa para alcanzar la libertad financiera no es una cuenta bancaria ni un bien material. <strong>Eres tú.</strong></p>
-
-    <hr>
-
-    <h3>Un mensaje directo para ti</h3>
-    <p>Si estás leyendo estas palabras, es porque en tu interior sabes que estás llamado a más. Sabes que hay algo más grande esperando que lo construyas. Puede que todavía no tengas todos los recursos, pero tienes lo más importante: la intención y la visión de un futuro distinto.</p>
-    <p>Tu tarea no es esperar la oportunidad perfecta, sino empezar con lo que tienes hoy.</p>
-    <ul>
-        <li>Empieza con un proyecto pequeño, pero real.</li>
-        <li>Empieza con una inversión sencilla, pero constante.</li>
-        <li>Empieza con un cambio de hábitos, aunque parezca mínimo.</li>
-    </ul>
-    <p>La libertad financiera no llega por accidente. Llega porque decides tomar el control, asumir riesgos inteligentes y sembrar hoy para cosechar mañana.</p>
-
-    <hr>
-
-    <h3> Conclusión inspiradora:</h3>
-    <p>El camino no es sencillo, pero cada paso que tomes hoy será un ladrillo en el puente hacia tu independencia. Hazte una pregunta poderosa:</p>
-    <blockquote>“¿Estoy construyendo activos que trabajen por mí, o sigo trabajando solo para pagar cuentas?”</blockquote>
-    <p>La respuesta a esa pregunta marcará el rumbo de tu vida en los próximos años.</p>
-
-
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-<!-- End Banner -->
-<!-- section -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <!-- Columna Imagen -->
-            <div class="col-md-6">
-                <div class="full text_align_right_img">
-                    <img src="images/cmf.png" alt="#" style="max-width:100%; height:auto; margin-top:50px;" />
-                </div>
-            </div>
-
-            <!-- Columna Texto -->
-            <div class="col-md-6 layout_padding">
-                <div class="full paddding_left_15">
-                    <div class="heading_main text_align_left">
-
-<style>
-/* Esto elimina cualquier raya que venga por defecto */
-h1::before, 
-h1::after, 
-h2::before, 
-h2::after {
-  content: none !important;
-  display: none !important;
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_left_img img {
+    margin-top: 30px;
+  }
 }
 </style>
 
-<div style="text-align: center; padding: 20px; max-width: 600px; margin: 0 auto;">
+<div class="section-black">
+  <div class="container">
+    <div class="row">
 
-    <!-- Subtítulo -->
-    <h2 style="font-size: 18px; font-weight: normal; font-family: Arial, sans-serif; margin-bottom: 10px; color: #444; line-height: 1.4;">
-         Errores Comunes al Invertir (y Cómo Evitarlos desde el Inicio)
-    </h2>
-
-    <!-- ÚNICA línea naranja -->
-    <div style="width: 80px; height: 3px; background-color: orange; margin: 10px auto;"></div>
-
-    <!-- Título principal -->
-    <h1 style="font-size: 22px; font-weight: bold; font-family: Arial, sans-serif; margin-top: 10px; line-height: 1.3;">
-       Consejos prácticos para invertir con seguridad y evitar pérdidas innecesarias
-    </h1>
-
-</div>
-
-
-
-
-                    </div>
-                </div>
-                <div class="full paddding_left_15" style="text-align: justify; font-size: 18px; line-height: 1.8; font-family: Arial, sans-serif;">
-                    
- 
-
-
-
-
-<h3>1. Creer que invertir es lo mismo que ahorrar</h3>
-<p style="text-align: justify;">
-El ahorro protege, pero no multiplica. Guardar dinero en una cuenta bancaria sin estrategia solo sirve para perder valor con la inflación.  
-En lugar de acumular sin rumbo, destina parte de tus ahorros a activos que generen ingresos o que se valoricen con el tiempo.
-</p>
-
-<hr>
-
-<h3>2. Depender solo de un ingreso</h3>
-<p style="text-align: justify;">
-El error más costoso es creer que tu salario o tu negocio actual son suficientes. Si dependes de una sola fuente, vives con una fragilidad enorme: cualquier imprevisto puede derrumbar tu estabilidad.  
-Construye múltiples activos y fuentes de ingreso que trabajen por ti.
-</p>
-
-<hr>
-
-<h3>3. Buscar atajos y dinero rápido</h3>
-<p style="text-align: justify;">
-El deseo de resultados inmediatos lleva a muchos a caer en fraudes, estafas o “inversiones milagrosas”.  
-Regla de oro: si suena demasiado bueno para ser verdad, probablemente lo sea. Concéntrate en construir sistemas escalables, no en apuestas.
-</p>
-
-<hr>
-
-<h3>4. Pensar como consumidor en lugar de como productor</h3>
-<p style="text-align: justify;">
-Los consumidores gastan su dinero en pasivos (lujos, gadgets, deudas de tarjeta). Los productores lo invierten en construir activos (negocios, contenido, propiedad intelectual).  
-Hazte siempre la pregunta: “¿Esto me genera ingresos o me los quita?”
-</p>
-
-<hr>
-
-<h3>5. No invertir en ti mismo primero</h3>
-<p style="text-align: justify;">
-Querer multiplicar dinero sin antes multiplicar tus conocimientos es como querer cosechar sin haber sembrado nada.  
-La educación financiera, el aprendizaje de nuevas habilidades y el desarrollo personal son la base para que cualquier inversión externa tenga éxito.
-</p>
-
-<hr>
-
-<h3>Cómo aplicar estas lecciones desde hoy</h3>
-<p style="text-align: justify;">
-1. Separa capital de inversión: aunque sea el 10% de tus ingresos, destínalo solo a activos.<br>
-2. Elige un primer vehículo sencillo: una inversión digital, un curso que luego se transforme en producto, o un activo financiero accesible.<br>
-3. Hazlo escalable: prioriza lo que puede crecer sin que aumente tu esfuerzo proporcionalmente.<br>
-4. Mide, aprende y ajusta: cada resultado (positivo o negativo) es una lección que te acerca a tu objetivo.
-</p>
-
-<hr>
-
-<h3>Conclusión poderosa</h3>
-<p style="text-align: justify;">
-Invertir no es un evento, es un proceso. La verdadera libertad no se alcanza siguiendo atajos, sino evitando errores que otros ya cometieron y tomando decisiones inteligentes desde hoy.
-</p>
-          </p>
-        </div>
-
-        <div class="full paddding_left_15">
-          <a class="main_bt" href="#">Volver a inicio &gt;</a>
+      <!-- COLUMNA IMAGEN IZQUIERDA -->
+      <div class="col-md-6">
+        <div class="full text_align_left_img">
+          <img src="images/cmc.png" alt="Construcción de riqueza">
         </div>
       </div>
 
+      <!-- COLUMNA TEXTO DERECHA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
+
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+              “Inversión Estratégica y Mentalidad de CEO: Construye Activos que Generen Libertad Financiera”
+            </h2>
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+             “Cómo Multiplicar tu Valor, Crear Sistemas y Tomar Control de tu Futuro Financiero”
+            </h1>
+          </header>
+
+          <!-- CONTENIDO -->
+
+
+
+          <section>
+    <p>La inversión no comienza con un clic en una aplicación, ni con comprar acciones o un inmueble. La inversión comienza en tu mente. Empieza cuando dejas de justificar la mediocridad, cuando dejas de esperar que la vida te entregue algo y decides tomar control absoluto de tu futuro financiero.</p>
+
+    <p>Si crees que tu salario es suficiente para garantizar libertad, estás condenado a la rutina eterna. El tiempo es limitado y tu ingreso basado en horas trabajadas nunca superará ese límite. La verdadera riqueza se construye con sistemas, activos que escalan y decisiones estratégicas que otros ni siquiera se atreven a considerar.</p>
+
+    <hr>
+
+    <h3>La diferencia brutal entre avanzar y sobrevivir</h3>
+    <p>Observa a tu alrededor: algunos gastan su energía en apagar incendios, otros la usan para construir imperios. La diferencia no está en la suerte, ni en títulos ni en dinero heredado. La diferencia está en estrategia, mentalidad y audacia.</p>
+    <ul>
+        <li>El que sobrevive paga deudas y sigue atrapado en la rueda del consumo.</li>
+        <li>El que avanza invierte en educación de alto valor, en negocios escalables y activos que generan ingresos automáticos.</li>
+        <li>El que sobresale transforma su tiempo y dinero en palancas que multiplican su libertad.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Activos que trabajan por ti: el arma secreta de los CEO</h3>
+    <p>No es teoría. Cada proyecto, cada inversión es una semilla que puede convertirse en un flujo constante de ingresos. Un blog, un negocio digital, una propiedad, un sistema automatizado: todos son activos que generan valor mientras tú te enfocas en crecer y escalar.</p>
+    <p>Los CEO exitosos no venden su tiempo, venden estructuras que generan dinero sin su intervención directa. ¿Quieres libertad real? Necesitas crear activos que produzcan valor mientras tú lideras, creas o incluso descansas.</p>
+
+    <hr>
+
+    <h3>El riesgo real: no invertir ni actuar</h3>
+    <p>Mucha gente teme perder dinero. El verdadero peligro es quedarte quieto mientras otros multiplican su riqueza. Cada día sin acción es una oportunidad robada. Cada semana de indecisión es una brecha que tus competidores llenan con velocidad.</p>
+    <ul>
+        <li>No invertir hoy = seguir en el mismo lugar dentro de 5 años.</li>
+        <li>No asumir riesgos inteligentes = nunca conocer tu verdadero potencial financiero.</li>
+        <li>No construir sistemas de ingresos = entregar tu vida al reloj y a un salario que nunca crece.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Tu mayor inversión: tú mismo</h3>
+    <p>Antes de multiplicar dinero, multiplica tu valor. Entrena tu mente, adquiere habilidades estratégicas, aprende a vender, a crear y a invertir. Ese es tu verdadero capital.</p>
+    <ul>
+        <li><strong>Aprende a vender:</strong> todo es venta, incluso tu visión y tus ideas.</li>
+        <li><strong>Aprende a crear:</strong> productos, servicios y sistemas que escalen sin depender de ti.</li>
+        <li><strong>Aprende a invertir:</strong> dinero que trabaje para ti, no tú para el dinero.</li>
+    </ul>
+    <p>Recuerda, CEO exitoso no nace de la suerte, nace de decisiones estratégicas, acción agresiva y constancia implacable.</p>
+
+    <hr>
+
+    <h3>Actúa como CEO de tu vida financiera</h3>
+    <p>Deja de ser espectador. Los grandes líderes financieros piensan y actúan como CEO. Ellos diseñan sistemas, crean activos, buscan oportunidades y no dependen de jefes ni de su tiempo limitado.</p>
+    <ul>
+        <li>Define metas financieras claras y agresivas.</li>
+        <li>Construye flujos de ingresos múltiples, escalables y automáticos.</li>
+        <li>Invierte constantemente en educación, mentoría y estrategias que otros ignoran.</li>
+    </ul>
+    <p>Si quieres libertad financiera, debes dejar de pedir permiso y empezar a ejecutar como un verdadero estratega. Tu riqueza depende de lo que haces hoy, no mañana.</p>
+
+    <hr>
+
+    <h3>Mensaje directo y brutal para ti</h3>
+    <p>Si estás leyendo esto, ya sabes que la mediocridad no es una opción. Tienes la visión, tienes la intención, ahora necesitas la acción implacable. No esperes la oportunidad perfecta, créala.</p>
+    <ul>
+        <li>Empieza hoy con un proyecto real y tangible.</li>
+        <li>Invierte hoy aunque sea poco, pero hazlo constante y estratégico.</li>
+        <li>Transforma tu mentalidad, tus hábitos y tu disciplina en herramientas para multiplicar activos.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Conclusión para quienes se atreven</h3>
+    <p>Todo lo que hagas hoy será la base de tu libertad financiera mañana. Pregúntate:</p>
+    <blockquote>“¿Estoy construyendo activos y sistemas que trabajen por mí, o sigo esclavo de mi tiempo y de un sueldo que no escala?”</blockquote>
+    <p>La respuesta define si serás un espectador en la vida o el CEO de tu propio imperio. Decide hoy, actúa hoy, construye hoy. Tu futuro no espera.</p>
+</section>
 
 
 
 
-                </div>
-            </div>
+
+
+         
+          
         </div>
+      </div>
+
     </div>
+  </div>
 </div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= SECCIÓN ================= -->
+<style>
+/* ================= RESET Y ESTILOS BASE ================= */
+h1::before, h1::after,
+h2::before, h2::after {
+  content: none !important;
+  display: none !important;
+}
+
+.section-black {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3,
+.section-black p,
+.section-black li {
+  color: #fff;
+  line-height: 1.8;
+}
+
+.section-black h1,
+.section-black h2,
+.section-black h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.section-black p {
+  margin-bottom: 16px;
+}
+
+.section-black .content-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 25px 20px;
+  font-family: 'Georgia', serif;
+  text-align: justify;
+}
+
+.section-black .text-right-col {
+  text-align: left;
+}
+
+/* Línea decorativa naranja */
+.section-black .orange-line {
+  width: 80px;
+  height: 3px;
+  background-color: orange;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Botón */
+.section-black .main_bt {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.section-black .main_bt:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Imagen — bajada */
+.section-black .text_align_left_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .section-black .content-box {
+    padding: 15px;
+  }
+  .section-black .text-right-col {
+    text-align: center !important;
+  }
+  .section-black .text_align_left_img img {
+    margin-top: 30px;
+  }
+}
+</style>
+
+<div class="section-black">
+  <div class="container">
+    <div class="row">
+
+      <!-- COLUMNA IMAGEN IZQUIERDA -->
+      <div class="col-md-6">
+        <div class="full text_align_left_img">
+          <img src="images/cmf.png" alt="Errores al invertir">
+        </div>
+      </div>
+
+      <!-- COLUMNA TEXTO DERECHA -->
+      <div class="col-md-6 layout_padding text-right-col">
+        <div class="content-box">
+
+          <!-- ENCABEZADO -->
+          <header style="text-align: center; padding: 20px;">
+            <h2 style="font-size:18px; font-weight:normal; color:#ccc;">
+              Errores Fatales que Te Alejan de la Libertad Financiera y Cómo Superarlos Hoy
+            </h2>
+            <div class="orange-line"></div>
+            <h1 style="font-size:22px; font-weight:bold;">
+             Claves de CEOs y Emprendedores para Construir Activos Reales y Evitar Errores Costosos
+            </h1>
+          </header>
+
+          <!-- CONTENIDO -->
+
+
+
+          <section>
+  <h3>1. Creer que invertir es lo mismo que ahorrar</h3>
+  <p>Ahorra, sí, pero entender que ahorrar no multiplica es la primera lección brutal que muchos ignoran. Guardar dinero en una cuenta bancaria mientras la inflación devora tu poder adquisitivo es como poner gasolina en un tanque con agujeros: parecerá que avanzas, pero en realidad retrocedes.  
+  Los verdaderos líderes financieros no acumulan por acumular: <strong>destinan su capital a activos que trabajan para ellos</strong>, desde inversiones digitales hasta negocios que escalan sin su presencia constante.</p>
+
+  <hr>
+
+  <h3>2. Depender solo de un ingreso</h3>
+  <p>Si tu salario o tu negocio principal son tu única fuente de ingreso, felicidades: estás jugando a la ruleta rusa financiera. Un despido, una crisis, un cambio inesperado y todo se derrumba.  
+  Los CEOs y los emprendedores exitosos construyen imperios con múltiples flujos de dinero: inversiones que generan cashflow, propiedades, activos digitales y proyectos paralelos. <strong>Tu seguridad financiera no debería depender de la suerte, sino de un sistema que funcione aunque tú no estés presente.</strong></p>
+
+  <hr>
+
+  <h3>3. Buscar atajos y dinero rápido</h3>
+  <p>Todos quieren resultados inmediatos, pero la mayoría termina atrapada en promesas vacías y estafas disfrazadas de oportunidad. La realidad es cruda: el dinero real y sostenible nunca llega por magia.  
+  Regla de oro: <strong>si suena demasiado bueno para ser verdad, probablemente lo sea</strong>. Aprende a distinguir entre apuestas y activos escalables. Los CEOs construyen riqueza a través de estrategia, paciencia y disciplina, no por golpes de suerte.</p>
+
+  <hr>
+
+  <h3>4. Pensar como consumidor en lugar de como productor</h3>
+  <p>El 99% de las personas son consumidores eternos: gastan en gadgets, lujos, deudas de tarjetas, mientras los productores transforman esos mismos recursos en activos que generan más dinero.  
+  Pregúntate siempre: “¿Esto genera ingresos o me los quita?” y actúa en consecuencia. Convertirse en productor es un cambio de mentalidad que separa a los líderes de los que siempre siguen el rebaño.</p>
+
+  <hr>
+
+  <h3>5. No invertir en ti mismo primero</h3>
+  <p>Querer multiplicar dinero sin antes multiplicar tu conocimiento es un suicidio financiero disfrazado de ambición.  
+  Educación financiera, habilidades estratégicas, desarrollo personal y liderazgo: todo esto es el terreno fértil donde tus inversiones externas crecerán. <strong>Tu mejor activo siempre eres tú.</strong> Mientras otros buscan fórmulas mágicas, los CEOs invierten primero en su mente y capacidades.</p>
+
+  <hr>
+
+  <h3>6. La disciplina como arma secreta</h3>
+  <p>El talento solo es útil cuando se combina con disciplina brutal. Planificación, seguimiento de resultados y ajuste constante separan a los que alcanzan la independencia financiera de los que solo sueñan con ella.  
+  Cada acción meditada, cada aprendizaje aplicado, es un ladrillo en la construcción de tu imperio. <strong>No hay atajos para la consistencia.</strong></p>
+
+  <hr>
+
+  <h3>Cómo aplicar estas lecciones desde hoy</h3>
+  <ul>
+    <li>Separa capital de inversión: aunque sea el 10% de tus ingresos, destínalo solo a activos que escalen.</li>
+    <li>Elige tu primer vehículo con criterio: un proyecto digital, un activo financiero inteligente o un negocio replicable.</li>
+    <li>Piensa en escalabilidad: prioriza lo que puede crecer exponencialmente sin aumentar tu esfuerzo proporcionalmente.</li>
+    <li>Mide, ajusta, aprende: cada acierto o error es un paso más hacia la libertad financiera.</li>
+    <li>Invierte en tu red: conecta con personas que eleven tu visión, no con quienes te limitan.</li>
+    <li>Cuida tu tiempo: es tu recurso más valioso, la moneda que nunca podrás recuperar.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Conclusión poderosa</h3>
+  <p>Invertir no es un juego ni un evento único: es una estrategia diaria, agresiva y consciente. Los que logran independencia financiera no esperan oportunidades, las crean. No siguen la multitud, la lideran.  
+  La libertad financiera no llega por azar: <strong>llega porque tomas decisiones inteligentes, actúas con determinación y multiplicas tus activos hoy para cosechar mañana.</strong></p>
+
+  <p><strong>Pregunta clave: ¿Estás construyendo activos que trabajen por ti, o sigues trabajando solo para pagar cuentas?</strong> La respuesta determinará tu futuro.</p>
+</section>
+
+          
+
+          <a class="main_bt" href="#">Volver a inicio ></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ================= FIN DE SECCIÓN ================= -->
+
+
+
+
 
 
 
@@ -990,5 +1154,12 @@ Invertir no es un evento, es un proceso. La verdadera libertad no se alcanza sig
 <script src="js/isotope.min.js"></script>
 <script src="js/images-loded.min.js"></script>
 <script src="js/custom.js"></script>
+
+
+
+
+
+
+
 </body>
 </html>
