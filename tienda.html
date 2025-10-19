@@ -1,77 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>“Haznos Llegar tus Preguntas”</title>
-<!-- Favicon -->
-<link rel="icon" type="images/png" href="images/joe.png">
-<link rel="shortcut icon" href="images/joe.png" type="images/png">
-  <!-- Google Fonts -->
+  <title>Tienda Código Millonario: Productos y Herramientas para tu Libertad Financiera</title>
+  <link rel="icon" type="images/png" href="images/joe.png">
+  <link rel="shortcut icon" href="images/joe.png" type="images/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- Pogo Slider CSS -->
   <link rel="stylesheet" href="css/pogo-slider.min.css">
-  <!-- Estilos base -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/custom.css">
 
   <style>
-    /* ======== ESTILO GLOBAL ======== */
     body {
       background-color: #000;
       color: #ffffff;
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 100px 0 0 0; /* 👈 Se bajó el cuerpo agregando espacio superior */
       overflow-x: hidden;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    a { text-decoration: none; transition: all 0.3s ease; }
+    p, h1, h2, h3, h4, h5, h6, span, li, div, strong { color: #ffffff !important; }
 
-    a {
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    p, h1, h2, h3, h4, h5, h6, span, li, div, strong {
-      color: #ffffff !important;
-    }
-
-    /* ======== NAVBAR MODERNO ======== */
+    /* ======== NAVBAR ======== */
     .navbar {
       background: #000;
       border-bottom: 2px solid #ff9800;
       padding: 0.8rem 1rem;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
     }
-
     .navbar-brand img {
       max-width: 110px;
       height: auto;
       transition: 0.3s ease;
     }
-
-    .navbar-brand img:hover {
-      opacity: 0.9;
-    }
-
-    .navbar-nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
+    .navbar-brand img:hover { opacity: 0.9; }
+    .navbar-nav { display: flex; align-items: center; gap: 1.5rem; }
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 500;
@@ -79,7 +52,6 @@
       padding: 8px 0;
       position: relative;
     }
-
     .navbar-nav .nav-link::after {
       content: "";
       position: absolute;
@@ -90,14 +62,8 @@
       background: #ff9800;
       transition: 0.3s ease;
     }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #ff9800 !important;
-    }
+    .navbar-nav .nav-link:hover::after { width: 100%; }
+    .navbar-nav .nav-link:hover { color: #ff9800 !important; }
 
     /* ======== BOTÓN HAMBURGUESA ======== */
     .navbar-toggler {
@@ -107,7 +73,6 @@
       cursor: pointer;
       z-index: 1100;
     }
-
     .navbar-toggler-icon {
       width: 25px;
       height: 2px;
@@ -116,7 +81,6 @@
       position: relative;
       transition: all 0.3s ease;
     }
-
     .navbar-toggler-icon::before,
     .navbar-toggler-icon::after {
       content: "";
@@ -127,24 +91,17 @@
       left: 0;
       transition: all 0.3s ease;
     }
+    .navbar-toggler-icon::before { top: -7px; }
+    .navbar-toggler-icon::after { top: 7px; }
 
-    .navbar-toggler-icon::before {
-      top: -7px;
-    }
-
-    .navbar-toggler-icon::after {
-      top: 7px;
-    }
-
+    /* Estado activo → X */
     .navbar-toggler.active .navbar-toggler-icon {
-      background: transparent;
+      background: transparent !important;
     }
-
     .navbar-toggler.active .navbar-toggler-icon::before {
       transform: rotate(45deg);
       top: 0;
     }
-
     .navbar-toggler.active .navbar-toggler-icon::after {
       transform: rotate(-45deg);
       top: 0;
@@ -152,161 +109,28 @@
 
     /* ======== MENU RESPONSIVO ======== */
     @media (max-width: 992px) {
-      .navbar-brand img {
-        max-width: 85px;
-      }
-
+      .navbar-brand img { max-width: 85px; }
       .navbar-collapse {
         background: #000;
         border-top: 1px solid #222;
         transition: max-height 0.4s ease;
         overflow: hidden;
       }
-
       .navbar-nav {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
         padding: 1rem 0;
       }
-
       .navbar-nav .nav-link {
         font-size: 16px;
         padding: 10px 0;
       }
-
-      /* 🔸 Corregir el ancho de todo el contenido */
-      body, .container, .pogoSlider, .slide_text, .pogoSlider-slide {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      .slide_text {
-        padding: 0 15px;
-      }
-
-      p, h3, h1, h2 {
-        text-align: center;
-        width: 100% !important;
-      }
     }
-
-    /* ======== BANNER ======== */
-    .ulockd-home-slider {
-      position: relative;
-      margin-top: 90px;
-    }
-
-    .pogoSlider-slide {
-      height: 420px;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .slide_text h3 {
-      color: #ffffff;
-      font-size: 40px;
-      font-weight: 600;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-      text-align: center;
-      width: 100%;
-      padding: 0 20px;
-    }
-
-    @media (max-width: 768px) {
-      .slide_text h3 {
-        font-size: 26px;
-      }
-    }
-
-
-
-
-
-
-
-
-/* ======== FORMULARIO DE CONTACTO ======== */
-.contact_form_inner input,
-.contact_form_inner textarea {
-  width: 100%;
-  background-color: #111;       /* gris oscuro suave, no negro total */
-  color: #fff;                  /* texto blanco */
-  border: 1px solid #ff9800;    /* borde naranja, consistente con la web */
-  border-radius: 6px;
-  padding: 12px 14px;
-  font-size: 15px;
-  margin-bottom: 16px;
-  transition: all 0.3s ease;
-}
-
-.contact_form_inner input::placeholder,
-.contact_form_inner textarea::placeholder {
-  color: #bbb; /* texto guía gris claro */
-}
-
-.contact_form_inner input:focus,
-.contact_form_inner textarea:focus {
-  background-color: #1a1a1a; /* un poco más claro al hacer clic */
-  border-color: #ffa726;    /* tono más brillante del naranja */
-  outline: none;
-  box-shadow: 0 0 6px rgba(255,152,0,0.6); /* brillo sutil */
-}
-
-.contact_form_inner textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* Botón Enviar */
-.contact_form_inner button {
-  background-color: #ff9800;
-  color: #000;
-  font-weight: bold;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.contact_form_inner button:hover {
-  background-color: #ffa726;
-  transform: translateY(-2px);
-}
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-  .section-black .content-box {
-    text-align: justify !important;
-  }
-  .section-black .content-box p,
-  .section-black .content-box ul,
-  .section-black .content-box li {
-    text-align: justify !important;
-  }
-}
-
-
-
-
   </style>
 </head>
 
 <body>
- 
-
-
-
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
@@ -315,7 +139,6 @@
       <img src="images/logo.png" alt="Código Millonario">
     </a>
 
-    <!-- Agregamos los atributos de Bootstrap para que controle el menú -->
     <button class="navbar-toggler" type="button" id="menu-toggle"
       data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
@@ -323,77 +146,67 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-  <ul class="navbar-nav">
-       <a class="nav-link" href="index.html">Inicio</a>
-<a class="nav-link" href="vision.html">Visión</a>
-<a class="nav-link" href="inversion.html">Inversión</a>
-<a class="nav-link" href="consejos.html">Consejos</a>
-<a class="nav-link" href="sobremi.html">Sobre mi</a>
-<a class="nav-link" href="tienda.html">Tienda</a>
-<a class="nav-link" href="contacto.html">Contacto</a>
-
-
-
+      <ul class="navbar-nav">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="vision.html">Visión</a>
+        <a class="nav-link" href="inversion.html">Inversión</a>
+        <a class="nav-link" href="consejos.html">Consejos</a>
+        <a class="nav-link" href="sobremi.html">Sobre mi</a>
+        <a class="nav-link" href="tienda.html">Tienda</a>
+        <a class="nav-link" href="contacto.html">Contacto</a>
+      </ul>
     </div>
   </div>
 </nav>
 
-<!-- SCRIPT HAMBURGUESA -->
+<!-- ✅ SCRIPT MENU HAMBURGUESA -->
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const navbarNav = document.getElementById('navbarNav');
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarNav = document.getElementById('navbarNav');
 
-  // Cierra el menú automáticamente al hacer clic en un enlace
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      // Usa la API de Bootstrap para cerrar correctamente sin conflictos
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarNav) || new bootstrap.Collapse(navbarNav);
-      bsCollapse.hide();
+    function resetIcon() {
+      menuToggle.classList.remove('active');
+      navbarNav.classList.remove('show');
+      const icon = menuToggle.querySelector('.navbar-toggler-icon');
+      icon.style.background = '#fff'; // restaurar barra central
+      icon.style.transform = 'none';
+    }
+
+    menuToggle.addEventListener('click', function () {
+      this.classList.toggle('active');
+      navbarNav.classList.toggle('show');
+
+      if (!this.classList.contains('active')) {
+        resetIcon();
+      }
+    });
+
+    // Cerrar menú al hacer clic en enlace
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992) {
+          resetIcon();
+        }
+      });
+    });
+
+    // Cerrar deslizando hacia arriba (móvil)
+    let startY = 0;
+    navbarNav.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+    });
+    navbarNav.addEventListener('touchmove', (e) => {
+      const endY = e.touches[0].clientY;
+      if (startY - endY > 50) {
+        resetIcon();
+      }
     });
   });
 </script>
 
-<!-- Bootstrap JS -->
-<script src="js/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-
-
-
-  <!-- Scripts -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.pogo-slider.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Inicializar slider
-      $('#js-main-slider').pogoSlider({
-        autoplay: true,
-        generateNav: false,
-        displayProgess: true,
-        preserveTargetSize: true,
-        targetWidth: 1000,
-        targetHeight: 300,
-      }).data('plugin_pogoSlider');
-
-      // ✅ Menú hamburguesa: abrir/cerrar correctamente
-      $('#menu-toggle').on('click', function () {
-        $(this).toggleClass('active');
-        $('#navbarNav').slideToggle(300);
-      });
-
-      // ✅ Cerrar menú al hacer clic en un enlace
-      $('.navbar-nav .nav-link').on('click', function () {
-        if ($(window).width() < 992) {
-          $('#menu-toggle').removeClass('active');
-          $('#navbarNav').slideUp(300);
-        }
-      });
-    });
-  </script>
+</body>
+</html>
 
 
 
@@ -677,7 +490,7 @@ h1::before, h1::after, h2::before, h2::after {
 
   <div class="inner">
     <header class="major">
-      <h2 style="color:#fff; font-size:2.2em;">Tienda Código Millonario -MUY PRONTO-</h2>
+      <h2 style="color:#fff; font-size:2.2em;">Tienda Código Millonario - MUY PRONTO - AUN NO DISPONIBLE - EN MANTENIMIENTO -</h2>
       <p style="color:#aaa; font-size:1.1em;">Invierte en tu mente y construye tu libertad financiera. Productos digitales 100% descargables.</p>
     </header>
 
