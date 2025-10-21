@@ -308,17 +308,9 @@
   margin: 0;
 }
 </style>
-<div class="section inner_page_banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="banner_title">
-          <h3>   </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
 
 
 
@@ -381,7 +373,8 @@ h1::before, h1::after, h2::before, h2::after {
       <div class="col-md-12">
         <div class="full">
           <div class="heading_main text_align_center">
-            <h2>Contacto</h2>
+            <h2>Hablemos</h2>
+            <p style="color:#aaa; font-size:1.1em;">¿Tienes dudas o ideas? Contáctanos y lleva tu mentalidad al siguiente nivel.</p>
             <div class="orange-line"></div>
           </div>
         </div>
@@ -394,23 +387,40 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
-
 <!-- contact_form -->
 <style>
-/* Contenedor del formulario */
+/* Contenedor general */
 .contact_form {
   padding: 60px 20px;
   color: #fff;
-  /* Fondo eliminado para que se integre con la página */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuadro del formulario */
+.contact_box {
+  background: #111; /* Fondo negro elegante */
+  border: 2px solid #ff9800; /* Borde naranja brillante */
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255,152,0,0.2); /* Sombra suave naranja */
+  padding: 40px 30px;
+  max-width: 600px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.contact_box:hover {
+  box-shadow: 0 0 35px rgba(255,152,0,0.4);
+  transform: translateY(-3px);
 }
 
 /* Inputs y textarea */
 .contact_form_inner input,
 .contact_form_inner textarea {
   width: 100%;
-  background-color: #333; /* Fondo gris oscuro para inputs */
+  background-color: #222;
   color: #fff;
-  border: 2px solid #ff9800; /* Borde naranja */
+  border: 2px solid #ff9800;
   border-radius: 6px;
   padding: 12px 14px;
   margin-bottom: 16px;
@@ -425,7 +435,7 @@ h1::before, h1::after, h2::before, h2::after {
 
 .contact_form_inner input:focus,
 .contact_form_inner textarea:focus {
-  background-color: #444;
+  background-color: #333;
   border-color: #ffa726;
   box-shadow: 0 0 8px rgba(255,152,0,0.6);
   outline: none;
@@ -433,8 +443,8 @@ h1::before, h1::after, h2::before, h2::after {
 
 /* Botón Enviar */
 .contact_form_inner button {
-  background-color: #ffffff !important; /* Blanco */
-  color: #000000 !important; /* Texto negro */
+  background-color: #ffffff !important;
+  color: #000000 !important;
   border: 2px solid #ffffff !important;
   padding: 10px 25px !important;
   font-size: 15px !important;
@@ -454,41 +464,39 @@ h1::before, h1::after, h2::before, h2::after {
   transform: translateY(-2px);
 }
 
-/* Centrado del formulario en pantalla pequeña */
+/* Responsivo */
 @media (max-width: 768px) {
-  .contact_form {
-    padding: 40px 15px;
+  .contact_box {
+    padding: 30px 20px;
   }
 }
 </style>
 
 <div class="section contact_form">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-sm-12 offset-lg-3">
-        <div class="full">
-          <form class="contact_form_inner" action="#">
-            <fieldset>
-              <div class="field">
-                <input type="text" name="name" placeholder="Tu nombre" />
-              </div>
-              <div class="field">
-                <input type="email" name="email" placeholder="Correo electrónico" />
-              </div>
-              <div class="field">
-                <input type="text" name="phone_no" placeholder="Número de teléfono" />
-              </div>
-              <div class="field">
-                <textarea placeholder="Escribe tu mensaje aquí"></textarea>
-              </div>
-              <div class="field center">
-                <button>Enviar</button>
-              </div>
-            </fieldset>
-          </form>
+  <div class="contact_box">
+    <form class="contact_form_inner" action="https://formsubmit.co/codigomillonarioblog@gmail.com" method="POST">
+      <fieldset>
+        <div class="field">
+          <input type="text" name="name" placeholder="Tu nombre" required />
         </div>
-      </div>
-    </div>
+        <div class="field">
+          <input type="email" name="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="field">
+          <input type="text" name="phone_no" placeholder="Número de teléfono" />
+        </div>
+        <div class="field">
+          <textarea name="message" placeholder="Escribe tu mensaje aquí" required></textarea>
+        </div>
+        <div class="field center">
+          <button type="submit">Enviar mensaje</button>
+        </div>
+      </fieldset>
+
+      <!-- Configuración opcional de seguridad y redirección -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+    </form>
   </div>
 </div>
 
@@ -496,6 +504,17 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
+<div class="section inner_page_banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner_title">
+          <h3>  </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

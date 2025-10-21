@@ -1,150 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Código Millonario: Productos y Herramientas para tu Libertad Financiera</title>
-  <link rel="icon" type="images/png" href="images/joe.png">
-  <link rel="shortcut icon" href="images/joe.png" type="images/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/pogo-slider.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/custom.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tienda Código Millonario: Productos y Herramientas para tu Libertad Financiera</title>
+<link rel="icon" type="images/png" href="images/joe.png">
+<link rel="shortcut icon" href="images/joe.png" type="images/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/pogo-slider.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/custom.css">
+<style>
+body {
+  background-color: #000;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 100px 0 0 0; /* 👈 Se bajó el cuerpo agregando espacio superior */
+  overflow-x: hidden;
+}
+* { box-sizing: border-box; }
+a { text-decoration: none; transition: all 0.3s ease; }
+p, h1, h2, h3, h4, h5, h6, span, li, div, strong { color: #ffffff !important; }
 
-  <style>
-    body {
-      background-color: #000;
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 100px 0 0 0; /* 👈 Se bajó el cuerpo agregando espacio superior */
-      overflow-x: hidden;
-    }
+/* ======== NAVBAR ======== */
+.navbar {
+  background: #000;
+  border-bottom: 2px solid #ff9800;
+  padding: 0.8rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.navbar-brand img {
+  max-width: 110px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.navbar-brand img:hover { opacity: 0.9; }
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 0;
+  position: relative;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff9800;
+  transition: 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after { width: 100%; }
+.navbar-nav .nav-link:hover { color: #ff9800 !important; }
 
-    * { box-sizing: border-box; }
-    a { text-decoration: none; transition: all 0.3s ease; }
-    p, h1, h2, h3, h4, h5, h6, span, li, div, strong { color: #ffffff !important; }
+/* ======== BOTÓN HAMBURGUESA ======== */
+.navbar-toggler {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.navbar-toggler-icon {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  transition: all 0.3s ease;
+}
+.navbar-toggler-icon::before { top: -7px; }
+.navbar-toggler-icon::after { top: 7px; }
 
-    /* ======== NAVBAR ======== */
-    .navbar {
-      background: #000;
-      border-bottom: 2px solid #ff9800;
-      padding: 0.8rem 1rem;
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-    }
-    .navbar-brand img {
-      max-width: 110px;
-      height: auto;
-      transition: 0.3s ease;
-    }
-    .navbar-brand img:hover { opacity: 0.9; }
-    .navbar-nav { display: flex; align-items: center; gap: 1.5rem; }
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      font-size: 15px;
-      padding: 8px 0;
-      position: relative;
-    }
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background: #ff9800;
-      transition: 0.3s ease;
-    }
-    .navbar-nav .nav-link:hover::after { width: 100%; }
-    .navbar-nav .nav-link:hover { color: #ff9800 !important; }
+/* Estado activo → X */
+.navbar-toggler.active .navbar-toggler-icon { background: transparent !important; }
+.navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
 
-    /* ======== BOTÓN HAMBURGUESA ======== */
-    .navbar-toggler {
-      border: none;
-      background: none;
-      outline: none;
-      cursor: pointer;
-      z-index: 1100;
-    }
-    .navbar-toggler-icon {
-      width: 25px;
-      height: 2px;
-      background: #fff;
-      display: block;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 2px;
-      background: #fff;
-      left: 0;
-      transition: all 0.3s ease;
-    }
-    .navbar-toggler-icon::before { top: -7px; }
-    .navbar-toggler-icon::after { top: 7px; }
-
-    /* Estado activo → X */
-    .navbar-toggler.active .navbar-toggler-icon {
-      background: transparent !important;
-    }
-    .navbar-toggler.active .navbar-toggler-icon::before {
-      transform: rotate(45deg);
-      top: 0;
-    }
-    .navbar-toggler.active .navbar-toggler-icon::after {
-      transform: rotate(-45deg);
-      top: 0;
-    }
-
-    /* ======== MENU RESPONSIVO ======== */
-    @media (max-width: 992px) {
-      .navbar-brand img { max-width: 85px; }
-      .navbar-collapse {
-        background: #000;
-        border-top: 1px solid #222;
-        transition: max-height 0.4s ease;
-        overflow: hidden;
-      }
-      .navbar-nav {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-        padding: 1rem 0;
-      }
-      .navbar-nav .nav-link {
-        font-size: 16px;
-        padding: 10px 0;
-      }
-    }
-  </style>
+/* ======== MENU RESPONSIVO ======== */
+@media (max-width: 992px) {
+  .navbar-brand img { max-width: 85px; }
+  .navbar-collapse {
+    background: #000;
+    border-top: 1px solid #222;
+    transition: max-height 0.4s ease;
+    overflow: hidden;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}
+</style>
 </head>
 
 <body>
-
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
   <div class="container d-flex justify-content-between align-items-center">
     <a class="navbar-brand" href="index.html">
       <img src="images/logo.png" alt="Código Millonario">
     </a>
-
-    <button class="navbar-toggler" type="button" id="menu-toggle"
-      data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+    <button class="navbar-toggler" type="button" id="menu-toggle" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <a class="nav-link" href="index.html">Inicio</a>
@@ -161,146 +156,99 @@
 
 <!-- ✅ SCRIPT MENU HAMBURGUESA -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarNav = document.getElementById('navbarNav');
-
-    function resetIcon() {
-      menuToggle.classList.remove('active');
-      navbarNav.classList.remove('show');
-      const icon = menuToggle.querySelector('.navbar-toggler-icon');
-      icon.style.background = '#fff'; // restaurar barra central
-      icon.style.transform = 'none';
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarNav = document.getElementById('navbarNav');
+  function resetIcon() {
+    menuToggle.classList.remove('active');
+    navbarNav.classList.remove('show');
+    const icon = menuToggle.querySelector('.navbar-toggler-icon');
+    icon.style.background = '#fff'; // restaurar barra central
+    icon.style.transform = 'none';
+  }
+  menuToggle.addEventListener('click', function () {
+    this.classList.toggle('active');
+    navbarNav.classList.toggle('show');
+    if (!this.classList.contains('active')) {
+      resetIcon();
     }
-
-    menuToggle.addEventListener('click', function () {
-      this.classList.toggle('active');
-      navbarNav.classList.toggle('show');
-
-      if (!this.classList.contains('active')) {
-        resetIcon();
-      }
-    });
-
-    // Cerrar menú al hacer clic en enlace
-    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 992) {
-          resetIcon();
-        }
-      });
-    });
-
-    // Cerrar deslizando hacia arriba (móvil)
-    let startY = 0;
-    navbarNav.addEventListener('touchstart', (e) => {
-      startY = e.touches[0].clientY;
-    });
-    navbarNav.addEventListener('touchmove', (e) => {
-      const endY = e.touches[0].clientY;
-      if (startY - endY > 50) {
+  });
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) {
         resetIcon();
       }
     });
   });
+  let startY = 0;
+  navbarNav.addEventListener('touchstart', (e) => { startY = e.touches[0].clientY; });
+  navbarNav.addEventListener('touchmove', (e) => {
+    const endY = e.touches[0].clientY;
+    if (startY - endY > 50) { resetIcon(); }
+  });
+});
 </script>
-
 </body>
 </html>
 
-
-
-
-
 <!-- ======== BOTONES FLOTANTES DE REDES REDONDOS ======== -->
 <style>
-  .social-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    z-index: 9999;
-  }
-
-  .social-float a {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%; /* 🔸 redondo total */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000; /* fondo negro */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-    border: 2px solid #fff; /* borde blanco fino */
-  }
-
-  .social-float a:hover {
-    transform: scale(1.1);
-    background-color: #ff9800; /* color al pasar el mouse */
-    border-color: #ff9800;
-  }
-
-  .social-float img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-    pointer-events: none;
-  }
-
-  /* Versión móvil */
-  @media (max-width: 600px) {
-    .social-float {
-      bottom: 15px;
-      right: 15px;
-      gap: 10px;
-    }
-    .social-float a {
-      width: 48px;
-      height: 48px;
-    }
-    .social-float img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-
-
-
-
+.social-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 9999;
+}
+.social-float a {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+.social-float a:hover {
+  transform: scale(1.1);
+  background-color: #ff9800;
+  border-color: #ff9800;
+}
+.social-float img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .social-float { bottom: 15px; right: 15px; gap: 10px; }
+  .social-float a { width: 48px; height: 48px; }
+  .social-float img { width: 24px; height: 24px; }
+}
 </style>
 
 <div class="social-float">
-  <!-- TikTok -->
   <a href="https://www.tiktok.com/@ciscotc?_t=ZN-90Pnx75UbJe&_r=1" target="_blank" aria-label="TikTok">
     <img src="images/tiktok.png" alt="TikTok">
   </a>
-
-  <!-- Facebook -->
   <a href="https://www.facebook.com/share/17EY2BF9Fs/" target="_blank" aria-label="Facebook">
     <img src="images/facebook.png" alt="Facebook">
   </a>
 </div>
 
-
-
-
-
-
-
-<!-- End header -->
 <!-- Start Banner -->
 <style>
 .inner_page_banner {
- background-color: #000;
-
+  background-color: #000;
   background-size: cover;
-  padding: 80px 0; /* Para que tenga altura visible */
-  color: white; /* Texto claro sobre la imagen */
-  text-align: center; /* Centra el texto */
+  padding: 80px 0;
+  color: white;
+  text-align: center;
 }
 .banner_title h3 {
   font-size: 36px;
@@ -308,75 +256,20 @@
   margin: 0;
 }
 </style>
-<div class="section inner_page_banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="banner_title">
-          <h3>   </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
 
-
-
-
-
-
-<!-- ======= SECCIÓN CONTACTO ======= -->
+<!-- SECCIÓN CONTACTO -->
 <style>
-/* Eliminar posibles rayas automáticas de la plantilla */
-h1::before, h1::after, h2::before, h2::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Centrado total y responsivo */
-.heading_main {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-}
-
-/* Título centrado */
-.heading_main h2 {
-  display: block !important;
-  text-align: center !important;
-  font-size: 26px !important;
-  font-weight: bold !important;
-  color: #fff !important;
-  margin-bottom: 8px !important;
-}
-
-/* Línea naranja centrada */
-.heading_main .orange-line {
-  width: 80px;
-  height: 3px;
-  background-color: orange;
-  margin: 0 auto !important;
-  display: block;
-}
-
-/* Ajuste para teléfonos */
+h1::before, h1::after, h2::before, h2::after { content: none !important; display: none !important; }
+.heading_main { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important; }
+.heading_main h2 { display: block !important; text-align: center !important; font-size: 26px !important; font-weight: bold !important; color: #fff !important; margin-bottom: 8px !important; }
+.heading_main .orange-line { width: 80px; height: 3px; background-color: orange; margin: 0 auto !important; display: block; }
 @media (max-width: 768px) {
-  .heading_main h2 {
-    font-size: 22px !important;
-  }
-  .heading_main .orange-line {
-    width: 60px;
-  }
+  .heading_main h2 { font-size: 22px !important; }
+  .heading_main .orange-line { width: 60px; }
 }
-
-
-
-
 </style>
 <div class="section layout_padding">
   <div class="container">
@@ -384,7 +277,8 @@ h1::before, h1::after, h2::before, h2::after {
       <div class="col-md-12">
         <div class="full">
           <div class="heading_main text_align_center">
-            <h2>Tienda</h2>
+            <h2>Productos Código Millonario</h2>
+            <p style="color:#aaa; font-size:1.1em;">Aprende, crece y evoluciona. Explora productos digitales 100% descargables que despiertan tu potencial.</p>
             <div class="orange-line"></div>
           </div>
         </div>
@@ -399,190 +293,277 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 
-<!-- Sección Tienda - Estilo Shopify Mejorada -->
+<!-- 🦍 SECCIÓN TIENDA CÓDIGO MILLONARIO -->
 <section id="tienda" class="wrapper style2 special" style="background:#0a0a0a; padding:4em 0;">
-  <style>
-    /* ✨ Animación de sacudida rápida con pausa */
-    @keyframes fastShake {
-      0%, 100% { transform: translateX(0); }
+<style>
+/* ====================== ANIMACIONES ====================== */
+@keyframes fastShake {
+  0%, 100% { transform: translateX(0); }
+  5% { transform: translateX(-10px); }
+  10% { transform: translateX(10px); }
+  15% { transform: translateX(-10px); }
+  20% { transform: translateX(10px); }
+  25% { transform: translateX(-10px); }
+  30% { transform: translateX(0); }
+  60% { transform: translateX(0); }
+}
+.shake-button {
+  animation: fastShake 1.5s infinite;
+  display: inline-block;
+}
+.shake-button:hover {
+  transform: scale(1.05);
+}
 
-      /* 3 sacudidas rápidas */
-      5%  { transform: translateX(-10px); }
-      10% { transform: translateX(10px); }
-      15% { transform: translateX(-10px); }
-      20% { transform: translateX(10px); }
-      25% { transform: translateX(-10px); }
-      30% { transform: translateX(0); }
+/* ====================== CONTENEDOR ====================== */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-      /* Pausa */
-      60% { transform: translateX(0); }
-    }
+/* ====================== CUADRÍCULA ====================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5em;
+  width: 100%;
+  margin-top: 1em;
+}
 
-    .shake-button {
-      animation: fastShake 1.5s infinite; /* ⚡ rápido y con pausa */
-      display: inline-block;
-    }
+/* ====================== TARJETAS ====================== */
+.card {
+  position: relative;
+  background: linear-gradient(145deg, #111 0%, #1a1a1a 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255,215,0,0.3);
+}
 
-    .shake-button:hover {
-      transform: scale(1.05);
-    }
+/* ====================== IMÁGENES ====================== */
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  display: block;
+  background: #000;
+  transition: opacity 0.3s ease;
+}
+.card:hover img {
+  opacity: 0.95;
+}
 
-    /* Tarjetas con efecto profesional */
-    .card {
-      background:#111;
-      border-radius:20px;
-      box-shadow:0 0 15px rgba(255,215,0,0.1);
-      overflow:hidden;
-      transition:transform 0.3s, box-shadow 0.3s;
-    }
+/* ====================== CONTENIDO ====================== */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5em;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0) 100%);
+  box-sizing: border-box;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow:0 0 25px rgba(255,215,0,0.3);
-    }
+/* ====================== TEXTO ====================== */
+.card-content h3 {
+  color: #fff;
+  font-size: 1.25em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card-content p {
+  color: #ccc;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
 
-    .card img {
-      width:100%;
-      height:250px;
-      object-fit:cover;
-    }
+/* ====================== PRECIO ====================== */
+.price {
+  color: #ffd700;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
 
-    .card-content {
-      padding:1.5em;
-    }
+/* ====================== BOTONES ====================== */
+.button.primary {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  padding: 0.7em 1.2em;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s;
+}
+.button.primary:hover {
+  transform: scale(1.08);
+  background: #ffdf33;
+}
 
-    .card-content h3 {
-      color:#fff;
-      font-size:1.4em;
-      margin-bottom:0.5em;
-    }
+/* ====================== LEER DESCRIPCIÓN ====================== */
+.toggle-desc {
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.8em;
+  transition: color 0.2s ease;
+}
+.toggle-desc:hover {
+  color: #ffd700;
+}
 
-    .card-content p {
-      color:#ccc;
-      margin-bottom:0.5em;
-    }
+/* ====================== DESCRIPCIÓN DESPLEGABLE ====================== */
+.description {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #ddd;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 0.95em;
+  margin-top: 0.8em;
+  line-height: 1.5em;
+  text-align: justify;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
-    .price {
-      color:#ffd700;
-      font-size:1.2em;
-      font-weight:bold;
-      margin-bottom:1em;
-    }
+<div class="inner">
+  <div class="grid">
 
-    .button.primary {
-      background:#ffd700;
-      color:#000;
-      border:none;
-      font-weight:bold;
-      padding:0.8em 1.2em;
-      border-radius:10px;
-      display:inline-block;
-      text-decoration:none;
-    }
-
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:2em;
-      margin-top:2em;
-    }
-  </style>
-
-  <div class="inner">
-    <header class="major">
-      <h2 style="color:#fff; font-size:2.2em;">Tienda Código Millonario - MUY PRONTO - AUN NO DISPONIBLE - EN MANTENIMIENTO -</h2>
-      <p style="color:#aaa; font-size:1.1em;">Invierte en tu mente y construye tu libertad financiera. Productos digitales 100% descargables.</p>
-    </header>
-
-    <div class="grid">
-
-      <!-- PRODUCTO 1 -->
-      <div class="card">
-        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
-        <div class="card-content">
-          <h3>Guía Millonaria 2025</h3>
-          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
-          <p class="price">$19.000 COP</p>
-          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
+    <!-- PRODUCTO 1 -->
+    <div class="card">
+      <img src="images/inversion-inteligente.png" alt="Producto Disponible">
+      <div class="card-content">
+        <h3>Los 4 Bloques de la Mentalidad Millonaria</h3>
+        <button class="toggle-desc">&gt; Leer descripción</button>
+        <div class="description">
+          Sigue pensando igual… y seguirás en el mismo lugar.
+Este método no es otro “libro de motivación”, es una guía directa para romper tus bloqueos mentales, vencer la falta de enfoque y entrenar tu mente para ganar.
+Aprende a dominar tu mentalidad financiera, fortalecer tu disciplina y crear resultados reales que duren.
         </div>
+        <p class="price">$24.900 COP</p>
+        <a href="https://hotmart.com/es/marketplace/productos/los-4-bloques-de-la-mentalidad-millonaria/M102522956G" target="_blank" class="button primary shake-button">Acceder ahora</a>
       </div>
-
-
-      <!-- PRODUCTO 1 -->
-      <div class="card">
-        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
-        <div class="card-content">
-          <h3>Guía Millonaria 2025</h3>
-          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
-          <p class="price">$19.000 COP</p>
-          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
-        </div>
-      </div>
-
-      <!-- PRODUCTO 1 -->
-      <div class="card">
-        <img src="images/ebook-guia2025.jpg" alt="Guía Millonaria 2025">
-        <div class="card-content">
-          <h3>Guía Millonaria 2025</h3>
-          <p>Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.</p>
-          <p class="price">$19.000 COP</p>
-          <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
-        </div>
-      </div>
-
-      <!-- PRODUCTO 2 -->
-      <div class="card">
-        <img src="images/curso-menteydinero.jpg" alt="Curso Mente y Dinero">
-        <div class="card-content">
-          <h3>Curso Rápido: Mente y Dinero</h3>
-          <p>Cambia tu mentalidad hacia la riqueza con este curso práctico sobre enfoque, acción y prosperidad.</p>
-          <p class="price">$24.000 COP</p>
-          <a href="https://tuusuario.gumroad.com/l/menteydinero" target="_blank" class="button primary shake-button">Acceder ahora</a>
-        </div>
-      </div>
-
     </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="card">
+      <img src="images/ebook-guia2025.jpg" alt="Producto No Disponible">
+      <div class="card-content">
+        <h3>NO DISPONIBLE</h3>
+        <button class="toggle-desc">&gt; Leer descripción</button>
+        <div class="description">
+          Aprende cómo crear ingresos digitales y aprovechar las oportunidades del 2025 con esta guía práctica y motivadora.
+        </div>
+        <p class="price">$0 COP</p>
+        <a href="https://tuusuario.gumroad.com/l/guia2025" target="_blank" class="button primary shake-button">Acceder ahora</a>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 3 -->
+    <div class="card">
+      <img src="images/ebook-guia2025.jpg" alt="Producto No Disponible">
+      <div class="card-content">
+        <h3>NO DISPONIBLE</h3>
+        <button class="toggle-desc">&gt; Leer descripción</button>
+        <div class="description">
+          Aprende a dominar tus finanzas personales y desarrollar una mentalidad orientada a la prosperidad y libertad económica.
+        </div>
+        <p class="price">$0 COP</p>
+        <a href="https://tuusuario.gumroad.com/l/finanzasinteligentes" target="_blank" class="button primary shake-button">Acceder ahora</a>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 4 -->
+    <div class="card">
+      <img src="images/curso-menteydinero.jpg" alt="Producto No Disponible">
+      <div class="card-content">
+        <h3>NO DISPONIBLE</h3>
+        <button class="toggle-desc">&gt; Leer descripción</button>
+        <div class="description">
+          Cambia tu mentalidad hacia la riqueza con este curso práctico sobre enfoque, acción y prosperidad.
+        </div>
+        <p class="price">$0 COP</p>
+        <a href="https://tuusuario.gumroad.com/l/menteydinero" target="_blank" class="button primary shake-button">Acceder ahora</a>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<!-- ====================== SCRIPT ====================== -->
+<script>
+document.querySelectorAll('.toggle-desc').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const desc = btn.nextElementSibling;
+    const isOpen = desc.style.display === 'block';
+    desc.style.display = isOpen ? 'none' : 'block';
+    btn.innerHTML = isOpen ? '&gt; Leer descripción' : 'Cerrar descripción';
+  });
+});
+</script>
 </section>
 
 
 
 
-
-
-
-
-
-
-
-
-
+<div class="section inner_page_banner" style="background:#000; padding:60px 0; text-align:center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner_title">
+          <h3 style="font-size:16px; color:#ccc; font-weight:400; letter-spacing:0.5px; line-height:1.7;">
+            🚀 <em>Tus resultados cambian cuando inviertes en ti.</em><br>
+            <strong>Descarga, aprende y pon en práctica lo que te acerca a tu meta.</strong><br>
+            <a href="contacto.html" style="color:#ffd700; font-weight:600; text-decoration:none;">Habla con nosotros y comienza hoy →</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<!-- end contact_form -->
-<!-- Start Footer -->
+
+
+
+
+
+
+<!-- FOOTER -->
 <footer class="footer-box">
 <div class="container">
 <div class="row">
 <div class="col-md-12 white_fonts">
 <div class="row">
+<div class="col-sm-6 col-md-6 col-lg-3"><div class="full"></div></div>
 <div class="col-sm-6 col-md-6 col-lg-3">
-<div class="full">
-</div>
-</div>
-<div class="col-sm-6 col-md-6 col-lg-3">
-<div class="full">
-<h3>Enlaces rápidos</h3>
-</div>
+<div class="full"><h3>Enlaces rápidos</h3></div>
 <div class="full">
 <ul class="menu_footer">
-
-
 <ul class="navbar-nav justify-content-end" id="navbarNav">
-  <li class="nav-item">
+<li class="nav-item">
 <a class="nav-link" href="index.html">Inicio</a>
 <a class="nav-link" href="vision.html">Visión</a>
 <a class="nav-link" href="inversion.html">Inversión</a>
@@ -590,18 +571,16 @@ h1::before, h1::after, h2::before, h2::after {
 <a class="nav-link" href="sobremi.html">Sobre mi</a>
 <a class="nav-link" href="tienda.html">Tienda</a>
 <a class="nav-link" href="contacto.html">Contacto</a>
-
-  </li>
+</li>
 </ul>
-
-
 </ul>
 </div>
 </div>
+
 <div class="col-sm-6 col-md-6 col-lg-3">
 <div class="full">
 <div class="footer_blog full white_fonts">
-<h3> Sugerencias</h3>
+<h3>Sugerencias</h3>
 <p>"Creado para quienes buscan crecer sin perder su esencia."</p>
 <div class="newsletter_form">
 <form action="index.html">
@@ -612,15 +591,14 @@ h1::before, h1::after, h2::before, h2::after {
 </div>
 </div>
 </div>
+
 <div class="col-sm-6 col-md-6 col-lg-3">
 <div class="full">
 <div class="footer_blog full white_fonts">
 <h3>Contactos</h3>
 <ul class="full">
-
-
 <li><img src="images/i5.png"><span>Global Inspiration Hub<br>Código Millonario, Worldwide</span></li>
-<li><img src="images/i6.png"/><span>codigomillonarioblog@gmail.com</span></li>
+<li><img src="images/i6.png"><span>contacto@codigomillonario.com</span></li>
 
 </ul>
 </div>
@@ -629,40 +607,14 @@ h1::before, h1::after, h2::before, h2::after {
 </div>
 </div>
 </div>
-</div>
 </footer>
-<!-- End Footer -->
+
 <div class="footer_bottom">
-<div class="container">
-<div class="row">
-<div class="col-12">
-<p class="crp">© Código Millonario 2025 · Todos los derechos reservados</p>
+<p>Copyright © 2025 Código Millonario. Todos los derechos reservados.</p>
 </div>
-</div>
-</div>
-</div>
-<a class="hvr-radial-out" href="#" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-<!-- ALL JS FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- ALL PLUGINS -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.pogo-slider.min.js"></script>
-<script src="js/slider-index.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/form-validator.min.js"></script>
-<script src="js/contact-form-script.js"></script>
-<script src="js/isotope.min.js"></script>
-<script src="js/images-loded.min.js"></script>
-<script src="js/custom.js"></script>
 
 
 
 
 
 
-
-
-</body>
-</html>
