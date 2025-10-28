@@ -227,7 +227,7 @@
 </script>
 
 <!-- ================== BANNER ================== -->
-<section class="banner-section" style="position: relative; border-bottom: 2px solid orange; background: #000; color: white; text-align: center; padding: 300px 20px 150px;">
+<section class="banner-section" style="position: relative; border-bottom: 2px solid orange; background: #000; color: white; text-align: center; padding: 300px 20px 150px; min-height: 600px; overflow: hidden;">
   <div class="banner-text">
     <h3 id="banner-title" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.8rem; margin-bottom: 25px;">
       CODIGO MILLONARIO<br><strong style="font-size: 2.3rem;">AHORRA</strong>
@@ -334,16 +334,17 @@
       height: 24px;
     }
   }
+
 </style>
 
 <div class="social-float">
   <!-- TikTok -->
-  <a href="https://www.tiktok.com/@ciscotc?_t=ZN-90Pnx75UbJe&_r=1" target="_blank" aria-label="TikTok">
+  <a href="#" onclick="event.preventDefault();" target="_blank" aria-label="TikTok">
     <img src="images/tiktok.png" alt="TikTok">
   </a>
 
- <!-- Facebook -->
-  <a href="https://www.facebook.com/share/17EY2BF9Fs/" target="_blank" aria-label="Facebook">
+  <!-- Facebook -->
+  <a href="#" onclick="event.preventDefault();" target="_blank" aria-label="Facebook">
     <img src="images/facebook.png" alt="Facebook">
   </a>
 </div>
@@ -354,20 +355,21 @@
 
 
 
-<!-- ================= SECCIÓN ================= -->
+
+<!-- ================= SECCIÓN PRINCIPAL ================= -->
 <style>
-h1::before, 
-h1::after, 
-h2::before, 
-h2::after {
+/* ==== RESETEO ==== */
+h1::before, h1::after, h2::before, h2::after {
   content: none !important;
   display: none !important;
 }
 
+/* ==== ESTILO BASE ==== */
 .section-black {
   background-color: #000 !important;
   color: #fff !important;
   width: 100%;
+  margin-top: 80px; /* separación desde el banner */
 }
 
 .section-black p, 
@@ -398,15 +400,86 @@ h2::after {
   text-align: right;
 }
 
-.section-black blockquote {
-  border-left: 4px solid orange;
-  padding-left: 15px;
-  margin: 20px 0;
-  font-style: italic;
-  color: #fff;
+/* ==== PUBLICIDAD IZQUIERDA ==== */
+.promo-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
-/* BOTÓN blanco */
+/* 🔥 Imagen parpadeante rápida (visible / invisible) */
+.promo-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  animation: blinkFast 1s infinite;
+}
+
+@keyframes blinkFast {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* ==== TEXTO SOBRE LA IMAGEN ==== */
+.promo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 1.5em 2em;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.5);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.promo-text h2 {
+  font-size: 1.8em;
+  color: #ffd700;
+  margin-bottom: 0.5em;
+}
+
+.promo-text p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+/* 🚀 Botón con efecto de sacudida */
+.promo-btn {
+  background: #ffd700;
+  color: #000;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+  animation: shakeFast 0.4s infinite;
+}
+
+@keyframes shakeFast {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 0); }
+  50% { transform: translate(2px, 0); }
+  75% { transform: translate(-2px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+.promo-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* ==== BOTÓN BLANCO (EN TEXTO) ==== */
 .section-black .main_bt {
   display: inline-block;
   color: #000;
@@ -422,7 +495,7 @@ h2::after {
   background-color: #ccc;
 }
 
-/* Responsivo */
+/* ==== RESPONSIVO ==== */
 @media (max-width: 768px) {
   .section-black .content-box {
     padding: 15px;
@@ -431,6 +504,11 @@ h2::after {
   .section-black .text-right-col {
     text-align: center !important;
   }
+
+  .promo-text {
+    padding: 1em;
+    font-size: 0.9em;
+  }
 }
 </style>
 
@@ -438,13 +516,25 @@ h2::after {
   <div class="container">
     <div class="row">
 
+      <!-- PUBLICIDAD IZQUIERDA -->
       <div class="col-md-6">
-        <div class="full text_align_right_img"></div>
+        <section id="publicidad" style="text-align:center; overflow:hidden; background:#000;">
+          <div class="promo-container">
+            <img src="images/dinero-economia.png" alt="Publicidad Código Millonario">
+            <div class="promo-text">
+              <h2>¿Quieres tu propia página web profesional?</h2>
+              <p>Haz crecer tu marca con el poder del diseño digital. 👨‍💻✨</p>
+              <a href="contacto.html" class="promo-btn">Contáctame ahora</a>
+            </div>
+          </div>
+        </section>
       </div>
+
+      <!-- CONTENIDO DERECHA -->
       <div class="col-md-6 layout_padding text-right-col">
         <div class="content-box">
 
-          <!-- Título y subtítulo centrados con línea centrada -->
+          <!-- Título y subtítulo centrados -->
           <div style="text-align: center; padding: 20px;">
             <h2 style="font-size: 18px; font-weight: normal; color: #ccc;">
               Cómo Construir Riqueza en 2025: Motivación, Finanzas y Libertad Financiera
@@ -456,9 +546,7 @@ h2::after {
           </div>
 
 
-
-
-
+          
 <p>
     El mundo se ha vuelto implacable con quienes dudan. Mientras unos pierden tiempo esperando una señal, otros están construyendo imperios desde la nada. Esta no es una era para los conformistas ni para los que viven de excusas, es una era para los que actúan sin pedir permiso. Hoy, las reglas no las escriben los que observan… las escriben los que se atreven a moverse.
 </p>
@@ -542,12 +630,13 @@ h2::after {
 
 
 
-
-                </div>
-            </div>
         </div>
+      </div>
+
     </div>
+  </div>
 </div>
+<!-- ================= FIN DE SECCIÓN ================= -->
 
 
 
