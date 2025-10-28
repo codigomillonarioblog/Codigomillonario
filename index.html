@@ -274,6 +274,38 @@
     #banner-title strong { font-size: 2.1rem; }
     #banner-phrase { font-size: 1rem; padding: 0 10px; }
   }
+
+
+
+
+
+
+
+
+
+  @media (max-width: 768px) {
+  /* Corrige el salto visual del texto y la barra naranja */
+  .section-black h1,
+  .section-black h2 {
+    margin-top: 0;
+    margin-bottom: 10px; /* margen suave, sin empujar el resto */
+  }
+
+  /* Línea naranja decorativa del banner */
+  .section-black div[style*="background-color: orange"] {
+    display: block;
+    height: 3px !important;
+    width: 60px !important;
+    margin: 8px auto 12px auto !important;
+    transition: none !important; /* evita animaciones que mueven el contenido */
+  }
+
+  /* Evita que la publicidad se mueva con el reflujo del banner */
+  .promo-container {
+    margin-top: 0;
+  }
+}
+
 </style>
 
 </body>
@@ -334,7 +366,6 @@
       height: 24px;
     }
   }
-
 </style>
 
 <div class="social-float">
@@ -510,6 +541,35 @@ h1::before, h1::after, h2::before, h2::after {
     font-size: 0.9em;
   }
 }
+@media (max-width: 768px) {
+  .promo-text {
+    width: 90%;               /* el cuadro se hace más pequeño horizontalmente */
+    padding: 0.8em 1em;       /* reduce el espacio interno */
+    font-size: 0.85em;        /* texto más compacto */
+    top: 52%;                 /* leve ajuste para centrar mejor */
+    transform: translate(-50%, -50%);
+  }
+
+  .promo-text h2 {
+    font-size: 1.2em;         /* título más pequeño en móvil */
+  }
+
+  .promo-text p {
+    font-size: 0.95em;        /* texto más equilibrado */
+    margin-bottom: 0.8em;
+  }
+
+  .promo-btn {
+    padding: 0.6em 1.2em;     /* botón más pequeño */
+    font-size: 0.9em;
+  }
+
+  /* un poco más de espacio debajo de la imagen en móvil */
+  .promo-container {
+    padding-bottom: 50px;
+  }
+}
+
 </style>
 
 <div class="section-black">
